@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', function () { return View::make('pages.home'); });
+Route::get('/companies', function () { return View::make('pages.companies'); });
+Route::get('/responses', function () { return View::make('pages.responses'); });
