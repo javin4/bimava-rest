@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\LV;
 use Illuminate\Http\Request;
+use App\Http\Resources\LVResource;
+use Illuminate\Support\Facades\DB;
 
 class LVController extends Controller
 {
@@ -12,9 +14,38 @@ class LVController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(){
+        $output = DB::table('lvs')
+                ->select('id', 'name', 'kennung', 'project_id')
+                ->orderBy('kennung', 'asc')
+                ->get();
+ 
+        if ($output->isEmpty()) {
+            $output = LVResource::make($output);
+            return response()->json( $output, 204);
+            }
+
+        if ($output->isNotEmpty()) {
+            $output = LVResource::make($output);
+            return response()->json( $output, 200);
+            }
+    }
+
+     public function allByProjectID(Request $req){
+        $output = DB::table('lvs')
+                ->where('project_id', '=', $req->project_id)
+                ->select('id', 'name', 'kennung')
+                ->orderBy('kennung', 'asc')
+                ->get();
+        if ($output->isEmpty()) {
+            $output = LVResource::make($output);
+            return response()->json( $output, 204);
+            }
+
+        if ($output->isNotEmpty()) {
+           $output = LVResource::make($output);
+           return response()->json( $output, 200);
+            }
     }
 
     /**
@@ -44,8 +75,7 @@ class LVController extends Controller
      * @param  \App\Models\LV  $lV
      * @return \Illuminate\Http\Response
      */
-    public function show(LV $lV)
-    {
+    public function show(LV $lV){
         //
     }
 

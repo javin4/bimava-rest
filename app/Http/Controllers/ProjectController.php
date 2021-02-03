@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\project;
+use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Resources\ProjectResource;
 
-class ProjectController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+class ProjectController extends Controller{
+
+    public function index(){
+        $output = DB::table('projects')
+                ->orderBy('kennung', 'asc')
+                ->get();
+ 
+        return ProjectResource::make($output)
+                ->additional([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Resource found"
+                    ]
+                ]);
     }
 
     /**

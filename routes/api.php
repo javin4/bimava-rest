@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LVController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/projects', [ProjectController::class, 'index']);
+
+Route::get('/lvs', [LVController::class, 'index']);
+Route::post('/lvs', [LVController::class, 'allByProjectID']);
