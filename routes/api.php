@@ -22,6 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get      ('/projects', [ProjectController::class, 'index']);
 Route::get      ('/project/{id}', [ProjectController::class, 'show']);
+Route::post     ('/project', [ProjectController::class, 'store']);
+Route::put      ('/project/{project}', [ProjectController::class, 'update']);
 Route::delete   ('/project/{id}', [ProjectController::class, 'destroy']);
 
 Route::get('/lvs', [LVController::class, 'index']);

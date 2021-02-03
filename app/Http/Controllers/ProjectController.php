@@ -8,6 +8,10 @@ use PHPUnit\Framework\Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use App\Http\Resources\ProjectResource;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Transformers\ProjectTransformer;
+
+
 
 class ProjectController extends Controller{
 
@@ -30,37 +34,42 @@ class ProjectController extends Controller{
             }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function store(Request $req){
+        $validator = Validator::make($req->all(), [
+            'name' => 'required|string',
+            'kennung' => 'required|string',
+           // 'email' => 'required|email',
+           // 'job_title' => 'required|string',
+           // 'active' => 'required|boolean',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toArray(), 422);
+        }
+
+        DB::beginTransaction();
+        try {
+            $project = ProjectTransformer::toInstance($validator->validate());
+            $project->save();
+            DB::commit();
+        } catch (Exception $ex) {
+            Log::info($ex->getMessage());
+            DB::rollBack();
+            return response()->json($ex->getMessage(), 409);
+        }
+
+        return (new ProjectResource($project))
+            ->additional([
+                'meta' => [
+                    'success' => true,
+                    'message' => "employee created"
+                ]
+            ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\project  $project
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Request $req){
+    public function show($id){
         $output = DB::table('projects')
-      
-                ->where('id', '=', $req->id)
+                ->where('id', '=', $id)
                 ->select('id', 'name', 'kennung')
                 ->orderBy('kennung', 'asc')
                 ->get();
@@ -77,37 +86,40 @@ class ProjectController extends Controller{
         return  $output;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\project  $project
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(project $project)
-    {
-        //
+    public function update(Request $request, $id){
+        //return $id;
+        $project = Project::findorfail($id);
+        $validator = Validator::make($request->all(), [  
+            'name' => 'sometimes|required|string',  
+            'kennung' => 'sometimes|required|string',  
+        ]);  
+    
+        if ($validator->fails()) {  
+            return response()->json($validator->errors()->toArray(), 422);  
+        }  
+    
+        DB::beginTransaction();  
+        try {  
+            $updated_project = ProjectTransformer::toInstance($validator->validate(), $project);  
+            $updated_project->save();  
+            DB::commit();  
+        } catch (Exception $ex) {  
+            Log::info($ex->getMessage());  
+            DB::rollBack();  
+            return response()->json($ex->getMessage(), 409);  
+        }  
+    
+        return (new ProjectResource($updated_project))  
+            ->additional([  
+                'meta' => [  
+                    'success' => true,  
+                    'message' => "Project updated"  
+                ]  
+            ]); 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\project  $project
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, project $project)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\project  $project
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Request $req){
-        $project = Project::findorfail($req->id);
+    public function destroy($id){
+        $project = Project::findorfail($id);
         DB::beginTransaction();  
         try {  
             $project->delete();  

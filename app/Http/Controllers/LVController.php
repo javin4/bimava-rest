@@ -22,7 +22,7 @@ class LVController extends Controller
  
         if ($output->isEmpty()) {
             $output = LVResource::make($output);
-            return $output->response()->setStatusCode(204);
+            return $output->response()->setStatusCode(404);
             }
 
         if ($output->isNotEmpty()) {
@@ -39,7 +39,7 @@ class LVController extends Controller
                 ->get();
         if ($output->isEmpty()) {
             $output = LVResource::make($output);
-            return $output->response()->setStatusCode(204);
+            return $output->response()->setStatusCode(404);
             }
 
         if ($output->isNotEmpty()) {
