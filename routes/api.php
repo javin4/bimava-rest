@@ -20,7 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/projects', [ProjectController::class, 'index']);
+Route::get      ('/projects', [ProjectController::class, 'index']);
+Route::get      ('/project/{id}', [ProjectController::class, 'show']);
+Route::delete   ('/project/{id}', [ProjectController::class, 'destroy']);
 
 Route::get('/lvs', [LVController::class, 'index']);
 Route::post('/lvs', [LVController::class, 'allByProjectID']);

@@ -22,12 +22,12 @@ class LVController extends Controller
  
         if ($output->isEmpty()) {
             $output = LVResource::make($output);
-            return response()->json( $output, 204);
+            return $output->response()->setStatusCode(204);
             }
 
         if ($output->isNotEmpty()) {
             $output = LVResource::make($output);
-            return response()->json( $output, 200);
+            return $output->response()->setStatusCode(200);
             }
     }
 
@@ -39,12 +39,12 @@ class LVController extends Controller
                 ->get();
         if ($output->isEmpty()) {
             $output = LVResource::make($output);
-            return response()->json( $output, 204);
+            return $output->response()->setStatusCode(204);
             }
 
         if ($output->isNotEmpty()) {
-           $output = LVResource::make($output);
-           return response()->json( $output, 200);
+            $output = LVResource::make($output);
+            return $output->response()->setStatusCode(200);
             }
     }
 

@@ -18,6 +18,6 @@ class LVResource extends JsonResource
     }
     public function withResponse($request, $response)
     {
-        $response->setStatusCode(428, 'Precondition Required');
+        //$response->setStatusCode(428, 'Precondition Required');
     }
 }
