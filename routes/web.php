@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,5 @@ Route::get('/', function () {
 Route::get('/', function () { return View::make('pages.home'); });
 Route::get('/companies', function () { return View::make('pages.companies'); });
 Route::get('/responses', function () { return View::make('pages.responses'); });
+Route::get('/project', function () { return View::make('pages.project'); });
+Route::get('/lv', function () { return View::make('pages.lv'); });
