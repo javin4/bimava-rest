@@ -22,6 +22,23 @@ class ProjectController extends Controller{
                 ->select('id', 'name', 'kennung')
                 ->orderBy('kennung', 'asc')
                 ->get();
+                        
+        if ($output->isEmpty()) {
+            return response()->json($output, 404);
+            }
+
+        if ($output->isNotEmpty()) {
+            return response()->json($output, 200);
+            }
+    }
+/*
+    public function index(){
+        $output = DB::table('projects')
+                // TODO: User hat Privileg auf bearbeitung        
+                // ->where('user_id', '=', $req->user_id)
+                ->select('id', 'name', 'kennung')
+                ->orderBy('kennung', 'asc')
+                ->get();
  
         if ($output->isEmpty()) {
             $output = ProjectResource::make($output);
@@ -33,7 +50,7 @@ class ProjectController extends Controller{
             return $output->response()->setStatusCode(200);
             }
     }
-
+*/
     public function store(Request $req){
         $validator = Validator::make($req->all(), [
             'name' => 'required|string',
@@ -57,14 +74,15 @@ class ProjectController extends Controller{
             DB::rollBack();
             return response()->json($ex->getMessage(), 409);
         }
-
+/*
         return (new ProjectResource($project))
             ->additional([
                 'meta' => [
                     'success' => true,
                     'message' => "employee created"
                 ]
-            ]);
+            ]);*/
+            return response()->json($project, 200);
     }
 
     public function show($id){
