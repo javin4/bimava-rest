@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\LV;
+use PHPUnit\Framework\Exception;
 use Illuminate\Http\Request;
 use App\Http\Resources\LVResource;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class LVController extends Controller
 {
@@ -21,30 +23,26 @@ class LVController extends Controller
                 ->get();
  
         if ($output->isEmpty()) {
-            $output = LVResource::make($output);
-            return $output->response()->setStatusCode(404);
+            return response()->json($output, 404);
             }
 
         if ($output->isNotEmpty()) {
-            $output = LVResource::make($output);
-            return $output->response()->setStatusCode(200);
+            return response()->json($output, 200);
             }
     }
 
      public function allByProjectID(Request $req){
         $output = DB::table('lvs')
                 ->where('project_id', '=', $req->project_id)
-                ->select('id', 'name', 'kennung')
+                ->select('id', 'name', 'kennung', 'project_id')
                 ->orderBy('kennung', 'asc')
                 ->get();
         if ($output->isEmpty()) {
-            $output = LVResource::make($output);
-            return $output->response()->setStatusCode(404);
+            return response()->json($output, 204);
             }
 
         if ($output->isNotEmpty()) {
-            $output = LVResource::make($output);
-            return $output->response()->setStatusCode(200);
+            return response()->json($output, 200);
             }
     }
 
@@ -108,8 +106,21 @@ class LVController extends Controller
      * @param  \App\Models\LV  $lV
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LV $lV)
-    {
-        //
+    public function destroy($id){
+        $lv = LV::findorfail($id);
+        DB::beginTransaction();  
+        try {  
+            $lv->delete();  
+            // for softdelete;
+            // $company->active = false;  
+            // $company->save();  
+            DB::commit();  
+        } catch (Exception $ex) {  
+            Log::info($ex->getMessage());  
+            DB::rollBack();  
+            return response()->json($ex->getMessage(), 409);  
+        }  
+    
+        return response()->json('LV has been deleted', 204);  
     }
 }

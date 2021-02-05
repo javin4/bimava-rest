@@ -146,6 +146,5 @@ class ProjectController extends Controller{
         }  
     
         return response()->json('Project has been deleted', 204);  
-        /*return $project;*/
     }
 }

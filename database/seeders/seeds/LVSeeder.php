@@ -61,11 +61,20 @@ class LVSeeder extends Seeder
         $lv->save();
         */
         $project1 = Project::find('9a4208ba-27da-405c-b484-f386ba48f00b');
+        $project2 = Project::find('4f86bc1e-27b6-4129-9612-fd30f8ee4eb3');
         $LV1 =  LV::find('1e123069-3d02-4658-b7c7-9f30c8b100a0');
         $LV2 =  LV::find('7e6d0092-5cbd-4b9f-8e16-d9ec766cb00e');
+        $LV3 =  LV::find('c7d50ba4-2ee5-4be4-ae39-16c0e265f1a1');
+        $LV4 =  LV::find('f92b6522-531b-4780-91fb-4c5d108e45d1');
+        $LV5 =  LV::find('0c489dbe-98af-4cc8-9733-d83d2dd0cdc3');
+        
 
         $project1->lvs()->save($LV1);
         $project1->lvs()->save($LV2);
+
+        $project2->lvs()->save($LV3);
+        $project2->lvs()->save($LV4);
+        $project2->lvs()->save($LV5);
 
     }
 }
