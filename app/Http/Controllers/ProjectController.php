@@ -74,14 +74,6 @@ class ProjectController extends Controller{
             DB::rollBack();
             return response()->json($ex->getMessage(), 409);
         }
-/*
-        return (new ProjectResource($project))
-            ->additional([
-                'meta' => [
-                    'success' => true,
-                    'message' => "employee created"
-                ]
-            ]);*/
             return response()->json($project, 200);
     }
 
@@ -127,13 +119,15 @@ class ProjectController extends Controller{
             return response()->json($ex->getMessage(), 409);  
         }  
     
+        return response()->json($updated_project, 200);
+        /*
         return (new ProjectResource($updated_project))  
             ->additional([  
                 'meta' => [  
                     'success' => true,  
                     'message' => "Project updated"  
                 ]  
-            ]); 
+            ]); */
     }
 
     public function destroy($id){
