@@ -16,13 +16,9 @@ use App\Http\Transformers\ProjectTransformer;
 class ProjectController extends Controller{
 
     public function index(){
-        $output = DB::table('projects')
-                // TODO: User hat Privileg auf bearbeitung        
-                // ->where('user_id', '=', $req->user_id)
-                ->select('id', 'name', 'kennung')
-                ->orderBy('kennung', 'asc')
-                ->get();
-                        
+        $output = Project::all();
+                
+        //$output->lvs;        
         if ($output->isEmpty()) {
             return response()->json($output, 404);
             }
@@ -31,26 +27,21 @@ class ProjectController extends Controller{
             return response()->json($output, 200);
             }
     }
-/*
-    public function index(){
-        $output = DB::table('projects')
-                // TODO: User hat Privileg auf bearbeitung        
-                // ->where('user_id', '=', $req->user_id)
-                ->select('id', 'name', 'kennung')
-                ->orderBy('kennung', 'asc')
-                ->get();
- 
+
+    
+    public function index2(){
+        $output = Project::with('lvs')->get(['kennung', 'id']);
+
         if ($output->isEmpty()) {
-            $output = ProjectResource::make($output);
-            return $output->response()->setStatusCode(204);
+            return response()->json($output, 404);
             }
 
         if ($output->isNotEmpty()) {
-            $output = ProjectResource::make($output);
-            return $output->response()->setStatusCode(200);
+            return response()->json($output, 200);
             }
     }
-*/
+
+
     public function store(Request $req){
         $validator = Validator::make($req->all(), [
             'name' => 'required|string',
