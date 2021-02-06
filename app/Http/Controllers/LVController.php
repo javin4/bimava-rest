@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\LV;
-use PHPUnit\Framework\Exception;
+use App\Models\Project;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Exception;
 use App\Http\Resources\LVResource;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use App\Http\Transformers\LVTransformer;
+use Illuminate\Support\Facades\Validator;
 
 class LVController extends Controller
 {
@@ -62,9 +65,34 @@ class LVController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $req){
+        $validator = Validator::make($req->all(), [
+            'name' => 'required|string',
+            'kennung' => 'required|string',
+            'project_id' => 'required|string',
+           // 'email' => 'required|email',
+           // 'job_title' => 'required|string',
+           // 'active' => 'required|boolean',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toArray(), 422);
+        }
+
+        $project = Project::findOrFail($req->project_id);
+
+        DB::beginTransaction();
+        try {
+            $lv = LVTransformer::toInstance($validator->validate());
+            $lv->save();
+            $project->lvs()->save($lv);
+            DB::commit();
+        } catch (Exception $ex) {
+            Log::info($ex->getMessage());
+            DB::rollBack();
+            return response()->json($ex->getMessage(), 409);
+        }
+            return response()->json($lv, 200);
     }
 
     /**

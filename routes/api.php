@@ -26,5 +26,12 @@ Route::post     ('/project', [ProjectController::class, 'store']);
 Route::put      ('/project/{project}', [ProjectController::class, 'update']);
 Route::delete   ('/project/{id}', [ProjectController::class, 'destroy']);
 
-Route::get('/lvs', [LVController::class, 'index']);
-Route::post('/lvs', [LVController::class, 'allByProjectID']);
+Route::get      ('/lvs', [LVController::class, 'index']);
+Route::post     ('/lvs', [LVController::class, 'allByProjectID']);
+//Route::post     ('/lv/{project_id}', [LVController::class, 'store']);
+
+Route::post     ('/lv', [LVController::class, 'store']);
+
+//Route::get      ('/lv/{id}', [LVController::class, 'index']);
+//Route::put      ('/lv/{id}', [LVController::class, 'index']);
+Route::delete   ('/lv/{id}', [LVController::class, 'destroy']);
