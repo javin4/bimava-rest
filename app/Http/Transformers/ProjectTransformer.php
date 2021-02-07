@@ -16,11 +16,11 @@ class ProjectTransformer{
                 case 'name':
                     $project->name = $value;
                     break;
-                case 'kennung':
-                    $project->kennung = $value;
-                    break;
                 case 'id':
                     $project->id = $value;
+                    break;
+                case 'kennung':
+                    $project->kennung = $value;
                     break;   
             }
         }

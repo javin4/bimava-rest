@@ -16,11 +16,11 @@ class LVTransformer{
                 case 'name':
                     $lv->name = $value;
                     break;
-                case 'kennung':
-                    $lv->kennung = $value;
-                    break;
                 case 'id':
                     $lv->id = $value;
+                    break;
+                case 'kennung':
+                    $lv->kennung = $value;
                     break;   
             }
         }

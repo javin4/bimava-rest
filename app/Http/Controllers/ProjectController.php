@@ -17,8 +17,10 @@ class ProjectController extends Controller{
 
     public function index(){
         $output = Project::all();
-                
-        //$output->lvs;        
+        $output = DB::table('projects')
+                ->select('id', 'name', 'kennung')
+                ->orderBy('kennung', 'asc')
+                ->get();   
         if ($output->isEmpty()) {
             return response()->json($output, 404);
             }
@@ -30,7 +32,7 @@ class ProjectController extends Controller{
 
     
     public function index2(){
-        $output = Project::with('lvs')->get(['kennung', 'id']);
+        $output = Project::with('lvs')->get(['id', 'kennung']);
 
         if ($output->isEmpty()) {
             return response()->json($output, 404);
@@ -68,9 +70,9 @@ class ProjectController extends Controller{
             return response()->json($project, 200);
     }
 
-    public function show($id){
+    public function show($uid){
         $output = DB::table('projects')
-                ->where('id', '=', $id)
+                ->where('id', '=', $uid)
                 ->select('id', 'name', 'kennung')
                 ->orderBy('kennung', 'asc')
                 ->get();

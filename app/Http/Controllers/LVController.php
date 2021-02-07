@@ -116,16 +116,30 @@ class LVController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\LV  $lV
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, LV $lV)
-    {
-        //
+    public function update(Request $request, $id){
+        //return $id;
+        $lv = LV::findorfail($id);
+        $validator = Validator::make($request->all(), [  
+            'name' => 'sometimes|required|string',  
+            'kennung' => 'sometimes|required|string',  
+        ]);  
+    
+        if ($validator->fails()) {  
+            return response()->json($validator->errors()->toArray(), 422);  
+        }  
+    
+        DB::beginTransaction();  
+        try {  
+            $updated_lv = LVTransformer::toInstance($validator->validate(), $lv);  
+            $updated_lv->save();  
+            DB::commit();  
+        } catch (Exception $ex) {  
+            Log::info($ex->getMessage());  
+            DB::rollBack();  
+            return response()->json($ex->getMessage(), 409);  
+        }  
+    
+        return response()->json($updated_lv, 200);
     }
 
     /**

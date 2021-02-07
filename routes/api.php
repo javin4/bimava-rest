@@ -28,10 +28,8 @@ Route::delete   ('/project/{id}', [ProjectController::class, 'destroy']);
 
 Route::get      ('/lvs', [LVController::class, 'index']);
 Route::post     ('/lvs', [LVController::class, 'allByProjectID']);
-//Route::post     ('/lv/{project_id}', [LVController::class, 'store']);
-
 Route::post     ('/lv', [LVController::class, 'store']);
 
 //Route::get      ('/lv/{id}', [LVController::class, 'index']);
-//Route::put      ('/lv/{id}', [LVController::class, 'index']);
+Route::put      ('/lv/{id}', [LVController::class, 'update']);
 Route::delete   ('/lv/{id}', [LVController::class, 'destroy']);
