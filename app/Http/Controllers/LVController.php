@@ -34,9 +34,9 @@ class LVController extends Controller
             }
     }
 
-     public function allByProjectID(Request $req){
+     public function allByProjectID(Request $req, $project_id){
         $output = DB::table('lvs')
-                ->where('project_id', '=', $req->project_id)
+                ->where('project_id', '=', $project_id)
                 ->select('id', 'name', 'kennung', 'project_id')
                 ->orderBy('kennung', 'asc')
                 ->get();
@@ -102,7 +102,7 @@ class LVController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(LV $lV){
-        //
+        return "TODO";
     }
 
     /**

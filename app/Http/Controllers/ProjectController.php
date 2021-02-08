@@ -16,7 +16,7 @@ use App\Http\Transformers\ProjectTransformer;
 class ProjectController extends Controller{
 
     public function index(){
-        $output = Project::all();
+        //$output = Project::all();
         $output = DB::table('projects')
                 ->select('id', 'name', 'kennung')
                 ->orderBy('kennung', 'asc')

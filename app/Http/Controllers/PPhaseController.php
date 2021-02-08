@@ -2,20 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProjectPhase;
+use App\Models\PPhase;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class ProjectPhaseController extends Controller
+class PPhaseController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index2($root_id){
+        $pp_root = PPhase::find($root_id);  
+        $output = $pp_root->allChildren;
+
+        $sorted = $output->sortBy('kennung');
+        $sorted->values()->all();
+
+        //return "aaa";
+        return $sorted;
+        return response()->json($sorted, 200);
     }
+
+    public function index($root_id){
+        $output = PPhase::where('parent_id',$root_id)->get();
+        $sorted = $output->sortBy('kennung');
+        return $sorted->values()->all();
+        //return $sorted;
+        return response()->json($output, 200);
+     }
 
     /**
      * Show the form for creating a new resource.
@@ -41,10 +57,10 @@ class ProjectPhaseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ProjectPhase  $projectPhase
+     * @param  \App\Models\PPhase  $pphase
      * @return \Illuminate\Http\Response
      */
-    public function show(ProjectPhase $projectPhase)
+    public function show(PPhase $pphase)
     {
         //
     }
@@ -52,10 +68,10 @@ class ProjectPhaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ProjectPhase  $projectPhase
+     * @param  \App\Models\PPhase  $pphase
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProjectPhase $projectPhase)
+    public function edit(PPhase $pphase)
     {
         //
     }
@@ -64,10 +80,10 @@ class ProjectPhaseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ProjectPhase  $projectPhase
+     * @param  \App\Models\PPhase  $pphase
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProjectPhase $projectPhase)
+    public function update(Request $request, PPhase $pphase)
     {
         //
     }
@@ -75,10 +91,10 @@ class ProjectPhaseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ProjectPhase  $projectPhase
+     * @param  \App\Models\PPhase  $pphase
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProjectPhase $projectPhase)
+    public function destroy(PPhase $pphase)
     {
         //
     }
