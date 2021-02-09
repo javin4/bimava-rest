@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LVController;
+use App\Http\Controllers\PElementController;
+use App\Http\Controllers\PElementTypController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PPhaseController;
 
@@ -37,9 +39,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     Route::put      ('/lv/{id}', [LVController::class, 'update']);
     Route::delete   ('/lv/{id}', [LVController::class, 'destroy']);
 
-//lv ------------------------------------------------------------------------------
+//pphases ------------------------------------------------------------------------------
     Route::get      ('/pphases/{root_id}', [PPhaseController::class, 'index']);
-
-
-
     Route::get      ('/test', [PPhaseController::class, 'index2']);
+
+//Element-Methode
+Route::get      ('/pelements', [PElementController::class, 'index']);
+Route::get      ('/pelementtyps', [PElementTypController::class, 'index']);
