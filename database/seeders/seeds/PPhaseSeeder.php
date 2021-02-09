@@ -3,6 +3,7 @@
 namespace Database\Seeders\Seeds;
 
 use App\Models\PPhase;
+use App\Models\Project;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -74,36 +75,14 @@ class PPhaseSeeder extends Seeder{
             }
             unset($row); // break the reference with the last element
 
-        /*
+        $root_lph = PPhase::find('7140c1f0-3f7e-4011-be89-de295a795201');    
 
-        $root = PPhase::find('f57076a7-4b94-482c-a6d9-e816ac76e060');
-        $pph1 = PPhase::find('566509c5-9fa2-4715-862e-285660f6f188');
-        $pph1A = PPhase::find('1e123069-3d02-4658-b7c7-9f30c8b100a0');
-        $pph1B = PPhase::find('f4e9d6d2-265b-40f1-ae07-774fde44a99f');
-
-        $root->children()->save($pph1);
-        $pph1->children()->save($pph1A);
-        $pph1A->children()->save($pph1B);
-        
-        */
-
-        /*
-        for ($i = 1; $i <= 10; $i++) {
-            $e = new PPhase;
-            $e->name = "Tischler".$i;
-            $e->kennung = "Tischler".$i;
-            $e->save();
-        }
-        
-        $e = new PPhase;
-        $e->name = "Tischler";
-        $e->kennung = "TI";
-        $e->save();
-        */
+        $project1 = Project::find('9a4208ba-27da-405c-b484-f386ba48f00b');
+        $project2 = Project::find('4f86bc1e-27b6-4129-9612-fd30f8ee4eb3');
 
 
-
-
-        
+        $root_lph->projects()->save($project1);
+        $root_lph->projects()->save($project2);
+         
     }
 }

@@ -53,4 +53,8 @@ class PPhase extends Model
     public function lastPhase(){
         return $this->belongsTo(PPhase::class, 'lastphase_id');
     }
+
+    public function projects(){
+        return $this->hasMany(Project::class,'pphase_id');
+    }
 }

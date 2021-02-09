@@ -19,16 +19,41 @@ class CreateProjectPhasesTable extends Migration
             $table->string('name',60);   // Bezeichnung
             $table->string('kennung',15); // Kennung
             $table->uuid('parent_id')->nullable(); // Referenz zu Projekt
-            $table->uuid('nextphase_id')->nullable(); // Referenz zu Projekt
-            $table->uuid('lastphase_id')->nullable(); // Referenz zu Projekt
+        
         });
 
-        Schema::table('pphases', function (Blueprint $table) 
-        {
+        Schema::table('pphases', function (Blueprint $table) {
             $table->foreign('parent_id')
             ->references('id')->on('pphases')
             ->onDelete('cascade');
         });
+/*
+        Schema::table('pphases', function (Blueprint $table) 
+        {
+            $table->uuid('project_id')->nullable(); // Referenz zu Projekt
+            $table->foreign('project_id')
+            ->references('id')->on('projects')
+            ->onDelete('cascade');
+        });*/
+
+        Schema::table('projects', function (Blueprint $table) 
+        {
+            $table->uuid('pphase_id')->nullable(); // Referenz zu Projekt
+            $table->foreign('pphase_id')
+            ->references('id')->on('pphases')
+            ->onDelete('cascade');
+        });
+
+
+/*
+        Schema::table('pphases', function (Blueprint $table) 
+        {
+            $table->foreign('project_id')
+            ->references('id')->on('projects')
+            ->onDelete('cascade');
+        });
+*/
+
     }
 
     /**

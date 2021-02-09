@@ -16,4 +16,7 @@ class Project extends Model
         return $this->hasMany(LV::class,'project_id');
     }
 
+    public function projectphase(){
+        return $this->belongsTo(PPhase::class,'pphase_id');
+    }
 }
