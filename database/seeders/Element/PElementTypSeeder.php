@@ -21,16 +21,16 @@ class PElementTypSeeder extends Seeder
 
             if ($row[0]==0){
                 $ek = PElementTyp::create([
-                    'kennung' => $row [1],
-                    'name' => $row[2]
+                    'kennung' => $row [2],
+                    'name' => $row[3]
                 ]);
             }
             else {
                 DB::table('p_element_typs')->insert(
                     array(
                         'id' => $row[0],
-                        'kennung' => $row[1],
-                        'name' => $row[2]
+                        'kennung' => $row[2],
+                        'name' => $row[3]
                     )
                 );
             }

@@ -16,7 +16,7 @@ class PComponentSeeder extends Seeder
     public function run(){
         $filename = base_path().'\database\seeders\Element\PComponentSeeder.csv';
         $fileurls = fopen($filename, 'r');
-   
+        fgetcsv($fileurls, 0, ';'); //ignor first row...
         while (($row = fgetcsv($fileurls, 0, ';')) !=FALSE){
 
             if ($row[0]==0){
