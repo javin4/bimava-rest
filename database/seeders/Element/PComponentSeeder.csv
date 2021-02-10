@@ -1,6 +1,6 @@
 uid;typ_id;kennung;name;thickness [mm]
-de57b730-5d82-4603-9051-6d0b901735fb;"";" E1";Linoleum;
-900e5cc7-629e-4277-ae28-2c94b6c54171;"";" E2";" Estrich 3cm";
-128285c2-bbd9-4202-8072-3f6fd504d77b;"";" E3";" Estrich 4cm";
-534fbcf6-b9c8-4cd8-b593-f553eb775f70;"";" E4";" Estrich 5cm";
-96509a21-9776-4985-864e-e4e02ebc9cad;"";" E5";" Estrich 6cm";
+de57b730-5d82-4603-9051-6d0b901735fb;;" E1";Linoleum;5
+900e5cc7-629e-4277-ae28-2c94b6c54171;;" E2";Calciumsulfatestrich mit Faserbewehrung (E300 ≤ 3kN/m²);60
+128285c2-bbd9-4202-8072-3f6fd504d77b;;" E3";PE-Folie;0,2
+534fbcf6-b9c8-4cd8-b593-f553eb775f70;;" E4";Trittschall-Dämmpl. 20 - ISOVER TDPT;20
+96509a21-9776-4985-864e-e4e02ebc9cad;;" E5";PE-Folie (sd>=120m);0,2

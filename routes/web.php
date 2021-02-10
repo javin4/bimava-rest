@@ -24,3 +24,4 @@ Route::get('/responses', function () { return View::make('pages.responses'); });
 Route::get('/project', function () { return View::make('pages.project'); });
 Route::get('/lv', function () { return View::make('pages.lv'); });
 Route::get('/permissions', function () { return View::make('pages.permissions'); });
+Route::get('/relation', function () { return View::make('pages.relation'); });

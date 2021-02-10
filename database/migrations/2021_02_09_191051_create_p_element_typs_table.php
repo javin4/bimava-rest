@@ -13,7 +13,7 @@ class CreatePElementTypsTable extends Migration
      */
     public function up()
     {
-        Schema::create('p_element_typs', function (Blueprint $table) {
+        Schema::create('p_elementtyps', function (Blueprint $table) {
             $table->uuid('id')->primary()->unique();
             $table->timestamps();
             $table->string('name',60);   // Bezeichnung
@@ -25,7 +25,7 @@ class CreatePElementTypsTable extends Migration
             $table->uuid('id')->primary()->unique();
             $table->timestamps();
             $table->string('name',60);   // Bezeichnung
-            $table->uuid('p_element_typ_id')->nullable(); // Referenz zu Cost_Element
+            $table->uuid('p_elementtyp_id')->nullable(); // Referenz zu Cost_Element
         });
 
         Schema::create('p_components', function (Blueprint $table) {
@@ -37,9 +37,27 @@ class CreatePElementTypsTable extends Migration
         });
 
         Schema::table('p_elements', function (Blueprint $table) {
-            $table->foreign('p_element_typ_id')
-            ->references('id')->on('p_element_typs')
+            $table->foreign('p_elementtyp_id')
+            ->references('id')->on('p_elementtyps')
             ->onDelete('set null');
+        });
+
+        //Relationtable elements_typs
+        Schema::create('p_typ_components', function (Blueprint $table) {
+            $table->uuid('id')->primary()->unique();
+            $table->uuid('p_elementyp_id');
+            $table->uuid('p_component_id');
+        });
+
+        Schema::table('p_typ_components', function (Blueprint $table) {
+            $table->integer('z')->nullable();
+            $table->foreign('p_elementyp_id')
+                  ->references('id')
+                  ->on('p_elementtyps')->onDelete('cascade');
+
+            $table->foreign('p_component_id')
+                  ->references('id')
+                  ->on('p_components')->onDelete('cascade');
         });
 
     }
@@ -52,8 +70,9 @@ class CreatePElementTypsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('p_element_typs');
+        Schema::dropIfExists('p_elementtyps');
         Schema::dropIfExists('p_elements');
         Schema::dropIfExists('p_components');
+        Schema::dropIfExists('p_typ_components');
     }
 }
