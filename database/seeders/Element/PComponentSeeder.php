@@ -9,40 +9,41 @@ use App\Models\Element\PComponent;
 use Illuminate\Support\Facades\DB;
 use App\Models\Element\PElementTyp;
 
-class PComponentSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+class PComponentSeeder extends Seeder{
+
     public function run(){
         $typ1 = PElementTyp::findorfail('49584723-5550-4bbd-ac0b-cb07ca36652a');
         $filename = base_path().'\database\seeders\Element\PComponentSeeder.csv';
         $fileurls = fopen($filename, 'r');
-        fgetcsv($fileurls, 0, ';'); //ignor first row...
-        while (($row = fgetcsv($fileurls, 0, ';')) !=FALSE){
 
-            if ($row[0]==0){
-                $ek = PComponent::create([
-                    'kennung' => $row [2],
-                    'name' => $row[3]
-                ]);
- 
-            }
+        $head = fgetcsv($fileurls, 0, ';');
+
+        while (($row = fgetcsv($fileurls, 0, ';')) !=FALSE){
+            if ($row[0]==0) 
+                {
+                    $id = Str::uuid()->toString();  
+                }
             else {
-                DB::table('p_components')->insert(
-                    array(
-                        'id' => $row[0],
-                        'kennung' => $row[2],
-                        'name' => $row[3]
-                    )
-                );
-                $typ1->PComponents()->attach($row [0],['id'=> Str::uuid()->toString()]);
+                $id = $row[0];                  
+                $pcomponent = PComponent::find($id);
+                if (!$pcomponent){
+                    DB::table('p_components')->insert(
+                        array (
+                            'id' => $id,        //id
+                            'kennung' => $row[2],    //kennung
+                            'name' => $row[3]     //name
+                        )
+                    );
+                } 
+                
+
+                $typ1 = PElementTyp::findorfail($row[1]);
+                $typ1->PComponents()->attach($id,['id'=> Str::uuid()->toString()]);
+               
+                unset($pcomponent);
+                unset($typ1);
             }
-            
+
         }
-       // $typ1 = PElementTyp::findorfail('49584723-5550-4bbd-ac0b-cb07ca36652a');
-        //$typ1->PComponents()->attach('de57b730-5d82-4603-9051-6d0b901735fb',['id'=> Str::uuid()->toString()]); 
     }//end function run
 }

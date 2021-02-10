@@ -11,6 +11,9 @@ class PComponent extends Model
     use HasFactory, Uuids;
     protected $table = 'p_components';
     protected $guarded =[];
+    protected $casts = [
+        'id' => 'string'
+      ];
     protected $hidden = ['pivot'];
 
     //Many to Many
