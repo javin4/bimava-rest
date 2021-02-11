@@ -11,6 +11,10 @@ use App\Models\Element\PElementTyp;
 
 class PComponentSeeder extends Seeder{
 
+    public function floatvaldec($v, $dec=',') {
+        return floatval(preg_replace ("," , "." , preg_replace ("[^-0-9$dec]","",$v)));
+    }
+
     public function run(){
         $typ1 = PElementTyp::findorfail('49584723-5550-4bbd-ac0b-cb07ca36652a');
         $filename = base_path().'\database\seeders\Element\PComponentSeeder.csv';
@@ -19,6 +23,7 @@ class PComponentSeeder extends Seeder{
         $head = fgetcsv($fileurls, 0, ';');
 
         while (($row = fgetcsv($fileurls, 0, ';')) !=FALSE){
+            $ehp_result = preg_replace("([^0-9\.])","",str_replace(",",".",$row[5]));
             if ($row[0]==0) 
                 {
                     $id = Str::uuid()->toString();  
@@ -29,9 +34,10 @@ class PComponentSeeder extends Seeder{
                 if (!$pcomponent){
                     DB::table('p_components')->insert(
                         array (
-                            'id' => $id,        //id
+                            'id' => $id,               //id
                             'kennung' => $row[2],    //kennung
-                            'name' => $row[3]     //name
+                            'name' => $row[3],      //name
+                            'ehp_result' =>  $ehp_result
                         )
                     );
                 } 
@@ -46,4 +52,6 @@ class PComponentSeeder extends Seeder{
 
         }
     }//end function run
+
+    
 }

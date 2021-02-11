@@ -14,13 +14,13 @@ class PElementTypController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-       
         $PElementDefs = PElementTyp::with(['PComponents'=> 
             function($query){
-            $query->select('name','kennung','p_component_id')->orderBy('kennung');
+            $query->select('*')->orderBy('kennung');
+//            $query->select('name','kennung','p_component_id')->orderBy('kennung');
            }])
     
-        ->select('kennung','name','id',)
+        ->select('kennung','name','id','ehp_override','ehp_override_flag','ehp_result')
         ->orderBy('kennung')
         ->get();
          
@@ -31,6 +31,12 @@ class PElementTypController extends Controller
         ->get();
   */      
         return response()->json($PElementDefs, 200);
+    }
+    
+    public function computeEhp($id) {
+        $PElementTyp = PElementTyp::findorfail($id);
+        $result = $PElementTyp->ehp_result();
+        return response()->json($id . ':computed value: '. $result, 200);
     }
 
 

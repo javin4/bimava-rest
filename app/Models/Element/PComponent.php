@@ -12,8 +12,10 @@ class PComponent extends Model
     protected $table = 'p_components';
     protected $guarded =[];
     protected $casts = [
-        'id' => 'string'
-      ];
+        'id' => 'string',
+        'ehp_result' => 'decimal:4'
+    ];
+
     protected $hidden = ['pivot'];
 
     //Many to Many

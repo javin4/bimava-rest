@@ -46,3 +46,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Element-Methode
 Route::get      ('/pelements', [PElementController::class, 'index']);
 Route::get      ('/pelementtyps', [PElementTypController::class, 'index']);
+Route::post      ('/pelementtyps/{id}', [PElementTypController::class, 'computeEhp']);
+Route::post      ('/pelementtyps-test/{id}', [PElementTypController::class, 'test']);

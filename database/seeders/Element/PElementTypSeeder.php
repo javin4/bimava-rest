@@ -21,7 +21,8 @@ class PElementTypSeeder extends Seeder{
                 array(
                     $head[0] => $id,
                     'kennung' => $row[1],
-                    'name' => $row[2]
+                    'name' => $row[2],
+                    'ehp_override' => $row[3]
                 )
             );
         }

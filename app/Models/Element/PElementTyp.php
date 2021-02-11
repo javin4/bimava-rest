@@ -17,6 +17,9 @@ class PElementTyp extends Model
         return $this->hasMany(PElement::class,'p_elementtyp_id');
     }   
     
+    protected $casts = array(
+        "ehp_result" => "decimal:4",
+    );
 
 
     //Many to Many
@@ -30,4 +33,14 @@ class PElementTyp extends Model
             ->withPivot('id');
     }
     
+
+    public function ehp_result() {
+        $result = 0;
+        PElementTyp::where('id', $this->id)->each(function($p, $k) use (&$result) {
+            $result += $p->PComponents()->sum('ehp_result');
+        }); 
+        $this->ehp_result = $result;
+        $this->save();
+        return $this->ehp_result;
+    }
 }
