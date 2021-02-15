@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Element\PComponent;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Exception;
+use App\Models\Element\PComponent;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Transformers\PComponentTransformer;
 
 class PComponentController extends Controller
 {
@@ -14,7 +19,7 @@ class PComponentController extends Controller
      */
     public function index()
     {
-        //
+        return PComponent::all();
     }
 
     /**
@@ -33,20 +38,42 @@ class PComponentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string',
+            'kennung' => 'required|string',
+           // 'email' => 'required|email',
+           // 'job_title' => 'required|string',
+           // 'active' => 'required|boolean',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toArray(), 422);
+        }
+
+        DB::beginTransaction();
+        try {
+            $project = PComponentTransformer::toInstance($validator->validate());
+            $project->save();
+            DB::commit();
+        } catch (Exception $ex) {
+            Log::info($ex->getMessage());
+            DB::rollBack();
+            return response()->json($ex->getMessage(), 409);
+        }
+            return response()->json($project, 200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Element\PComponent  $pComponent
+     * @param  \App\Models\Element\PComponent  $PComponent
      * @return \Illuminate\Http\Response
      */
-    public function show(PComponent $pComponent)
+    public function show(PComponent $PComponent)
     {
-        //
+        //return $PComponent;
+        return response()->json($PComponent, 200);
     }
 
     /**
@@ -67,9 +94,41 @@ class PComponentController extends Controller
      * @param  \App\Models\Element\PComponent  $pComponent
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PComponent $pComponent)
-    {
-        //
+    public function update(Request $request, PComponent $PComponent){
+   
+        $validator = Validator::make($request->all(), [  
+            'name' => 'sometimes|required|string',  
+            'kennung' => 'sometimes|required|string',  
+            'ehp_result' => 'sometimes|required|numeric', 
+            'ehp_override' => 'sometimes|required|numeric', 
+            'ehp_override_flag' => 'sometimes|required|boolean',
+            'ehp_computed' => 'sometimes|required|numeric',  
+        ]);  
+
+        if ($validator->fails()) {  
+            return response()->json($validator->errors()->toArray(), 422);  
+        }  
+
+        DB::beginTransaction();  
+        try {  
+            $updated = PComponentTransformer::toInstance($validator->validate(), $PComponent);  
+            $updated->save();  
+            DB::commit();  
+        } catch (Exception $ex) {  
+            Log::info($ex->getMessage());  
+            DB::rollBack();  
+            return response()->json($ex->getMessage(), 409);  
+        }  
+
+        return response()->json($updated, 200);
+        /*
+        return (new ProjectResource($updated_project))  
+            ->additional([  
+                'meta' => [  
+                    'success' => true,  
+                    'message' => "Project updated"  
+                ]  
+            ]); */
     }
 
     /**
@@ -78,8 +137,17 @@ class PComponentController extends Controller
      * @param  \App\Models\Element\PComponent  $pComponent
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PComponent $pComponent)
-    {
-        //
+    public function destroy(PComponent $PComponent){
+        DB::beginTransaction();  
+        try {  
+            $PComponent->delete();  
+            DB::commit();  
+        } catch (Exception $ex) {  
+            Log::info($ex->getMessage());  
+            DB::rollBack();  
+            return response()->json($ex->getMessage(), 409);  
+        }  
+    
+        return response()->json('PComponent has been deleted', 204);  
     }
 }

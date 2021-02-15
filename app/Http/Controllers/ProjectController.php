@@ -89,9 +89,7 @@ class ProjectController extends Controller{
         return  $output;
     }
 
-    public function update(Request $request, $id){
-        //return $id;
-        $project = Project::findorfail($id);
+    public function update(Request $request, Project $project){
         $validator = Validator::make($request->all(), [  
             'name' => 'sometimes|required|string',  
             'kennung' => 'sometimes|required|string',  
@@ -123,14 +121,10 @@ class ProjectController extends Controller{
             ]); */
     }
 
-    public function destroy($id){
-        $project = Project::findorfail($id);
+    public function destroy(Project $project){
         DB::beginTransaction();  
         try {  
             $project->delete();  
-            // for softdelete;
-            // $company->active = false;  
-            // $company->save();  
             DB::commit();  
         } catch (Exception $ex) {  
             Log::info($ex->getMessage());  

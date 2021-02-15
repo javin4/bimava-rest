@@ -35,6 +35,7 @@ class PElementTyp extends Model
     
 
     public function ehp_result() {
+        
         $result = 0;
         PElementTyp::where('id', $this->id)->each(function($p, $k) use (&$result) {
             $result += $p->PComponents()->sum('ehp_result');
@@ -42,5 +43,7 @@ class PElementTyp extends Model
         $this->ehp_result = $result;
         $this->save();
         return $this->ehp_result;
+        
+        //return "test";
     }
 }

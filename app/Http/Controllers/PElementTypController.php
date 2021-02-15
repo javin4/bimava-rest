@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Exception;
 use Illuminate\Support\Facades\DB;
 use App\Models\Element\PElementTyp;
+use Illuminate\Support\Facades\Log;
 
 class PElementTypController extends Controller
 {
@@ -33,10 +35,9 @@ class PElementTypController extends Controller
         return response()->json($PElementDefs, 200);
     }
     
-    public function computeEhp($id) {
-        $PElementTyp = PElementTyp::findorfail($id);
-        $result = $PElementTyp->ehp_result();
-        return response()->json($id . ':computed value: '. $result, 200);
+    public function computeEhp(PElementTyp $pelementtyp) {
+        $result = $pelementtyp->ehp_result();
+        return response()->json($pelementtyp->id . ':computed value: '. $result, 200);
     }
 
 
@@ -113,8 +114,18 @@ class PElementTypController extends Controller
      * @param  \App\Models\Element\PElementTyp  $pElementTyp
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PElementTyp $pElementTyp)
+    public function destroy(PElementTyp $PElementTyp)
     {
-        //
+        DB::beginTransaction();  
+        try {  
+            $PElementTyp->delete();  
+            DB::commit();  
+        } catch (Exception $ex) {  
+            Log::info($ex->getMessage());  
+            DB::rollBack();  
+            return response()->json($ex->getMessage(), 409);  
+        }  
+    
+        return response()->json('PElementTyp has been deleted', 204);  
     }
 }

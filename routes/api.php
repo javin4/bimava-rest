@@ -3,10 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LVController;
-use App\Http\Controllers\PElementController;
-use App\Http\Controllers\PElementTypController;
-use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PPhaseController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\PElementController;
+use App\Http\Controllers\PComponentController;
+use App\Http\Controllers\PElementTypController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //projects ------------------------------------------------------------------------
     Route::get      ('/projects', [ProjectController::class, 'index']);
-    Route::get      ('/project/{id}', [ProjectController::class, 'show']);
+    Route::get      ('/project/{project}', [ProjectController::class, 'show']);
     Route::post     ('/project', [ProjectController::class, 'store']);
-    Route::put      ('/project/{project_id}', [ProjectController::class, 'update']);
-    Route::delete   ('/project/{id}', [ProjectController::class, 'destroy']);
+    Route::put      ('/project/{project}', [ProjectController::class, 'update']);
+    Route::delete   ('/project/{project}', [ProjectController::class, 'destroy']);
 
 
 //lv ------------------------------------------------------------------------------
@@ -46,5 +47,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Element-Methode
 Route::get      ('/pelements', [PElementController::class, 'index']);
 Route::get      ('/pelementtyps', [PElementTypController::class, 'index']);
-Route::post      ('/pelementtyps/{id}', [PElementTypController::class, 'computeEhp']);
+Route::get      ('/pelementtyp/computeEhp/{pelementtyp}', [PElementTypController::class, 'computeEhp']);
 Route::post      ('/pelementtyps-test/{id}', [PElementTypController::class, 'test']);
+
+
+//pcomponents
+Route::get          ('/PComponents', [PComponentController::class, 'index']);
+Route::get          ('/PComponent/{PComponent}', [PComponentController::class, 'show']);
+Route::post         ('/PComponent', [PComponentController::class, 'store']);
+Route::put          ('/PComponent/{PComponent}', [PComponentController::class, 'update']);
+Route::delete       ('/PComponent/{PComponent}', [PComponentController::class, 'destroy']);
