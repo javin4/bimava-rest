@@ -18,6 +18,7 @@ class PElementTyp extends Model
     }   
     
     protected $casts = array(
+        'id' => 'string',
         "ehp_result" => "decimal:4",
     );
 

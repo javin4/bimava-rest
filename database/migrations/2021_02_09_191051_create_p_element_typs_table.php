@@ -19,10 +19,10 @@ class CreatePElementTypsTable extends Migration
             $table->string('name',60);   // Bezeichnung
             $table->string('kennung',15); // Kennung
             $table->text('description',15)->nullable(); // Kennung
-            $table->decimal('ehp_result',13, 4)->nullable();
-            $table->decimal('ehp_override',13, 4)->nullable();
-            $table->boolean('ehp_override_flag')->default(false);
-            $table->decimal('ehp_computed',13, 4)->nullable();
+            $table->decimal('ehp_result',13, 4)->nullable()->default(null);
+            $table->decimal('ehp_override',13, 4)->nullable()->default(null);
+            $table->boolean('ehp_override_flag')->nullable()->default(false);
+            $table->decimal('ehp_computed',13, 4)->nullable()->default(null);
         });
 
         Schema::create('p_elements', function (Blueprint $table) {

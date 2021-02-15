@@ -7,8 +7,10 @@ use PHPUnit\Framework\Exception;
 use App\Models\Element\PComponent;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use App\Events\PComponentUpdatedEvent;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Transformers\PComponentTransformer;
+use App\Models\Element\PElementTyp;
 
 class PComponentController extends Controller
 {
@@ -20,6 +22,15 @@ class PComponentController extends Controller
     public function index()
     {
         return PComponent::all();
+    }
+
+    public function indexPElementtyps(PComponent $PComponent){
+      
+        $id =$PComponent->id;
+        $output = PElementTyp::whereHas('PComponents', function ($query) use ($id) {
+            $query->whereIn('p_component_id', [$id]);
+        })->get();
+        return response()->json($output, 200);
     }
 
     /**
@@ -56,6 +67,7 @@ class PComponentController extends Controller
             $project = PComponentTransformer::toInstance($validator->validate());
             $project->save();
             DB::commit();
+            //-> TODO:event New Component
         } catch (Exception $ex) {
             Log::info($ex->getMessage());
             DB::rollBack();
@@ -99,10 +111,10 @@ class PComponentController extends Controller
         $validator = Validator::make($request->all(), [  
             'name' => 'sometimes|required|string',  
             'kennung' => 'sometimes|required|string',  
-            'ehp_result' => 'sometimes|required|numeric', 
-            'ehp_override' => 'sometimes|required|numeric', 
-            'ehp_override_flag' => 'sometimes|required|boolean',
-            'ehp_computed' => 'sometimes|required|numeric',  
+            'ehp_result' => 'sometimes|numeric', 
+            'ehp_override' => 'sometimes|numeric', 
+            'ehp_override_flag' => 'sometimes|boolean',
+            //'ehp_computed' => 'sometimes|numeric',  
         ]);  
 
         if ($validator->fails()) {  
@@ -114,12 +126,16 @@ class PComponentController extends Controller
             $updated = PComponentTransformer::toInstance($validator->validate(), $PComponent);  
             $updated->save();  
             DB::commit();  
+
+
         } catch (Exception $ex) {  
             Log::info($ex->getMessage());  
             DB::rollBack();  
             return response()->json($ex->getMessage(), 409);  
         }  
 
+        //-> TODO:event Update Component
+        event(new PComponentUpdatedEvent($updated));
         return response()->json($updated, 200);
         /*
         return (new ProjectResource($updated_project))  

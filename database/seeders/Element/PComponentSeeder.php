@@ -23,7 +23,7 @@ class PComponentSeeder extends Seeder{
         $head = fgetcsv($fileurls, 0, ';');
 
         while (($row = fgetcsv($fileurls, 0, ';')) !=FALSE){
-            $ehp_result = preg_replace("([^0-9\.])","",str_replace(",",".",$row[5]));
+            //$ehp_override = preg_replace("([^0-9\.])","",str_replace(",",".",$row[5]));
             if ($row[0]==0) 
                 {
                     $id = Str::uuid()->toString();  
@@ -37,7 +37,8 @@ class PComponentSeeder extends Seeder{
                             'id' => $id,               //id
                             'kennung' => $row[2],    //kennung
                             'name' => $row[3],      //name
-                            'ehp_result' =>  $ehp_result
+                            'ehp_override' =>  preg_replace("([^0-9\.])","",str_replace(",",".",$row[5])),
+                            'ehp_computed' =>  preg_replace("([^0-9\.])","",str_replace(",",".",$row[6]))
                         )
                     );
                 } 

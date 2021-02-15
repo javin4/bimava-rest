@@ -57,3 +57,5 @@ Route::get          ('/PComponent/{PComponent}', [PComponentController::class, '
 Route::post         ('/PComponent', [PComponentController::class, 'store']);
 Route::put          ('/PComponent/{PComponent}', [PComponentController::class, 'update']);
 Route::delete       ('/PComponent/{PComponent}', [PComponentController::class, 'destroy']);
+
+Route::get          ('/PComponent/{PComponent}/PElementtyps', [PComponentController::class, 'indexPElementtyps']);
