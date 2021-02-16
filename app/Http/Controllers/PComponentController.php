@@ -123,7 +123,6 @@ class PComponentController extends Controller
             'ehp_result' => 'sometimes|numeric', 
             'ehp_override' => 'sometimes|numeric', 
             'ehp_override_flag' => 'sometimes|boolean',
-            'bgl_id' => 'sometimes|string',  
         ]);  
 
         if ($validator->fails()) {  
@@ -135,9 +134,6 @@ class PComponentController extends Controller
             $updated = PComponentTransformer::toInstance($validator->validate(), $PComponent);  
             $updated->save();  
             DB::commit();  
-//            $PComponent->Bgl()->associate($Bgl);
-//            $PComponent->save();
-            return response()->json($PComponent, 200);
 
         } catch (Exception $ex) {  
             Log::info($ex->getMessage());  

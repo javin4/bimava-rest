@@ -13,19 +13,19 @@ class BglController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $root_id = '18fc28b4-4187-4844-9030-cc813ce5009b';
-        $root = bgl::find($root_id);
-        $output = $root->children;
+        $bgls = cache()->remember('baugliederung-cache',60*60*24, function () {
+            $root_id = '18fc28b4-4187-4844-9030-cc813ce5009b';
 
-        $sorted = $output->sortBy('kennung', SORT_STRING, true);
-        $sorted->values()->all();
+            $sorted = bgl::where('id', $root_id)        
+                ->with('children')
+                ->select('name', 'id')
+                ->get();
+            return $sorted;
+        });
 
-        $sorted = bgl::where('id', $root_id)        
+        return $bgls;
 
-        ->with('children')
-       ->select('name', 'id')
-        ->get();
-        return $sorted;
+
     }
 
 
@@ -51,6 +51,7 @@ class BglController extends Controller
      */
     public function store(Request $request)
     {
+        cache()->forget('baugliederung-cache');
         //
     }
 
@@ -85,7 +86,7 @@ class BglController extends Controller
      */
     public function update(Request $request, bgl $bgl)
     {
-        //
+        cache()->forget('baugliederung-cache');
     }
 
     /**
@@ -96,6 +97,6 @@ class BglController extends Controller
      */
     public function destroy(bgl $bgl)
     {
-        //
+        cache()->forget('baugliederung-cache');
     }
 }
