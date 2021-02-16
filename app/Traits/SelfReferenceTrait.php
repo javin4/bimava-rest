@@ -11,14 +11,17 @@ trait SelfReferenceTrait
         return $this->belongsTo(static::class);
     }
 
-    public function children()
+    public function kids()
     {
         return $this->hasMany(static::class, $this->parentColumn);
     }
 
-    public function allChildren()
+    public function children()
     {
-        return $this->children()->with('allChildren');
+        return $this->kids()
+        ->select('id','kennung','name','parent_id')
+        ->orderBy('kennung')
+        ->with('children');
     }
 
     public function root()

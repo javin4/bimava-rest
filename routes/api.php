@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LVController;
+use App\Http\Controllers\BglController;
 use App\Http\Controllers\PPhaseController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PElementController;
@@ -58,4 +59,11 @@ Route::post         ('/PComponent', [PComponentController::class, 'store']);
 Route::put          ('/PComponent/{PComponent}', [PComponentController::class, 'update']);
 Route::delete       ('/PComponent/{PComponent}', [PComponentController::class, 'destroy']);
 
+Route::put          ('/PComponent/{PComponent}/Bgl/{Bgl}', [PComponentController::class, 'attachBgl']);
+
+//get all PElementtyps by PComponent
 Route::get          ('/PComponent/{PComponent}/PElementtyps', [PComponentController::class, 'indexPElementtyps']);
+
+//bgl
+Route::get          ('/bgls', [BglController::class, 'index']);
+Route::get          ('/bglsH', [BglController::class, 'indexH']);

@@ -1,0 +1,220 @@
+id;typ_id;kennung;name
+18fc28b4-4187-4844-9030-cc813ce5009b;;_;_root
+78a505d2-96ee-4ebe-8b7b-707a2404cbd9;18fc28b4-4187-4844-9030-cc813ce5009b;0;Grund
+d1dd0a74-8bbb-4461-92d4-d4e7f78bbe9c;18fc28b4-4187-4844-9030-cc813ce5009b;1;Aufschließung
+f4c03974-0c7f-4ca4-a2ac-42df44b5efac;18fc28b4-4187-4844-9030-cc813ce5009b;2;Bauwerk-Rohbau
+148c5bd8-1e26-4df5-a1ae-285bcc6d5092;18fc28b4-4187-4844-9030-cc813ce5009b;3;Bauwerk-Technik
+2e789e30-e5be-4798-ade9-12e4a80635fa;18fc28b4-4187-4844-9030-cc813ce5009b;4;Bauwerk-Ausbau
+e24d646b-3bcb-47a0-880c-bf496e27c155;18fc28b4-4187-4844-9030-cc813ce5009b;5;Einrichtung
+ba444583-60ba-43c0-b424-e5eac7f9b93d;18fc28b4-4187-4844-9030-cc813ce5009b;6;Außenanlagen
+f087eea4-c636-43be-8d7b-20002300be1e;18fc28b4-4187-4844-9030-cc813ce5009b;7;Planungsleistungen
+fbc5f346-a0d8-4379-a4b4-16cf53b0386c;18fc28b4-4187-4844-9030-cc813ce5009b;8;Nebenleistungen
+438f2443-66f2-4b4b-89ca-2c3e66f051c8;18fc28b4-4187-4844-9030-cc813ce5009b;9;Reserven
+c7609a39-abe5-487d-ba05-2adcaee25c98;78a505d2-96ee-4ebe-8b7b-707a2404cbd9;0A;Allgemein
+a6665651-c26f-49a9-b2d9-f0627a68f1d3;78a505d2-96ee-4ebe-8b7b-707a2404cbd9;0B;Grunderwerb
+ad8b5367-74fc-416b-a4ca-c59a8913c2f3;78a505d2-96ee-4ebe-8b7b-707a2404cbd9;0C;Grunderwerb-Nebenleistungen 
+b8c8d13f-04cf-4816-82b7-383238d3bf73;78a505d2-96ee-4ebe-8b7b-707a2404cbd9;0D;Spezielle Maßnahmen
+57a38abd-8f54-4262-b5dd-21a4bc19cc1d;d1dd0a74-8bbb-4461-92d4-d4e7f78bbe9c;1A;Allgemein
+8cc3323b-8bc9-4819-9416-6d8b84246aba;d1dd0a74-8bbb-4461-92d4-d4e7f78bbe9c;1B;Baureifmachung
+c712e669-60fa-4fc9-a58b-2c0beb1cec85;d1dd0a74-8bbb-4461-92d4-d4e7f78bbe9c;1C;Erschließung
+059855f4-4953-4c36-b15b-cba906d3b8bb;d1dd0a74-8bbb-4461-92d4-d4e7f78bbe9c;1D;Abbruch, Rückbau
+8a570735-a8b0-48d7-aadc-94e7da4e172c;d1dd0a74-8bbb-4461-92d4-d4e7f78bbe9c;1E;Provisorien
+e91fe2f1-ea1b-4d7f-88d7-bad92b4c9f58;f4c03974-0c7f-4ca4-a2ac-42df44b5efac;2A;Allgemein
+f477b69a-06d7-4819-9039-54fab9f6d9f4;f4c03974-0c7f-4ca4-a2ac-42df44b5efac;2B;Erdarbeiten, Baugrube
+4837927c-72e9-402a-9755-aa4762c9491d;f4c03974-0c7f-4ca4-a2ac-42df44b5efac;2C;Gründungen, Bodenkonstruktionen
+b69c2487-5a03-40af-8d0e-62556ef89a00;f4c03974-0c7f-4ca4-a2ac-42df44b5efac;2D;Horizontale Baukonstruktionen
+a4c5c1c7-48d9-4dfa-bb21-049e63c22c2f;f4c03974-0c7f-4ca4-a2ac-42df44b5efac;2E;Vertikale Baukonstruktionen
+c67674d4-52c4-45ff-9da8-01cbbcef2aef;f4c03974-0c7f-4ca4-a2ac-42df44b5efac;2F;Spezielle Baukonstruktionen
+bc0ba9da-48d7-4237-86b6-c15583ed6f3f;f4c03974-0c7f-4ca4-a2ac-42df44b5efac;2G;Rohbau zu Bauwerk-Technik
+23dfea2c-7159-4b9b-acc8-2d741c932069;148c5bd8-1e26-4df5-a1ae-285bcc6d5092;3A;Allgemein
+078f6306-5a63-4979-92a7-72cd476b838b;148c5bd8-1e26-4df5-a1ae-285bcc6d5092;3B;Fördertechnik
+79f76801-6cc2-4acb-b90e-a26fce29699b;148c5bd8-1e26-4df5-a1ae-285bcc6d5092;3C;Wärmeversorgungsanlagen 
+e155aca0-4019-420c-8bdd-cab35356f8b5;148c5bd8-1e26-4df5-a1ae-285bcc6d5092;3D;Klima-/Lüftungsanlagen 
+79afbdb3-8809-4840-b84b-743d4f1e7c92;148c5bd8-1e26-4df5-a1ae-285bcc6d5092;3E;Sanitär-/Gasanlagen 
+543eeb14-b544-4e2d-bee2-600df69a3517;148c5bd8-1e26-4df5-a1ae-285bcc6d5092;3F;Starkstromanlagen
+368fd45a-62e4-422b-bcec-10c4046e0803;148c5bd8-1e26-4df5-a1ae-285bcc6d5092;3G;Fernmelde- und informationstechnische Anlagen 
+e824d098-aa70-4c92-8119-5ebcef52e33b;148c5bd8-1e26-4df5-a1ae-285bcc6d5092;3H;Gebäudeautomation
+726746ba-b2d4-4190-b1cd-1148c43826d9;148c5bd8-1e26-4df5-a1ae-285bcc6d5092;3I;Spezielle Anlagen
+a9934f5b-23a6-4604-ac89-4d1c622d36b8;2e789e30-e5be-4798-ade9-12e4a80635fa;4A;Allgemein
+bf219a80-9f2d-459b-ba59-0e1325ff54c1;2e789e30-e5be-4798-ade9-12e4a80635fa;4B;Dachverkleidung
+10bbc645-8a1b-44dc-a178-b8737059457a;2e789e30-e5be-4798-ade9-12e4a80635fa;4C;Fassadenhülle
+d28ae8d1-f8c1-464e-893b-8d5d8e1b9c53;2e789e30-e5be-4798-ade9-12e4a80635fa;4D;Innenausbau
+a04342a5-5955-41f6-9b09-3ad804495452;e24d646b-3bcb-47a0-880c-bf496e27c155;5A;Allgemein
+7030e3eb-a804-40c6-8427-15d910df884d;e24d646b-3bcb-47a0-880c-bf496e27c155;5B;Betriebseinrichtungen
+54378b18-a7e9-41cd-9444-c11db596dc96;e24d646b-3bcb-47a0-880c-bf496e27c155;5C;Ausstattungen
+5e8d6621-0447-4445-a899-5b288a0ae431;ba444583-60ba-43c0-b424-e5eac7f9b93d;6A;Allgemein
+72c852ed-7a98-49b6-95b3-659a1232fbe0;ba444583-60ba-43c0-b424-e5eac7f9b93d;6B;Geländeflächen
+1da11fda-dcf8-48de-8ce5-06e9718c4c86;ba444583-60ba-43c0-b424-e5eac7f9b93d;6C;Befestigte Flächen 
+8f0509e5-1af5-4ac5-ad5d-8b9928220742;ba444583-60ba-43c0-b424-e5eac7f9b93d;6D;Bauteile Außenanlage
+8d9a45c9-028f-4b1e-8125-d8341cc2a771;f087eea4-c636-43be-8d7b-20002300be1e;7A;Allgemein
+b2ecdb11-cac2-4302-a5b2-8d31c3c82922;f087eea4-c636-43be-8d7b-20002300be1e;7B;Bauherrenleistungen
+392e3e71-9216-4aa6-889f-16b5b437c1a6;f087eea4-c636-43be-8d7b-20002300be1e;7C;Planungsleistungen
+e7103f89-0830-43b0-950f-73c185f4b6a8;fbc5f346-a0d8-4379-a4b4-16cf53b0386c;8A;Allgemein
+112c0a5f-4b0d-4b11-bfc1-42fc3b91c240;fbc5f346-a0d8-4379-a4b4-16cf53b0386c;8B;Baunebenleistungen
+8fc80153-98bd-493e-85fd-d5743b60f8fc;fbc5f346-a0d8-4379-a4b4-16cf53b0386c;8C;Planungsnebenleistungen
+00a4da64-b8c5-45fb-937b-7133cdbc939c;438f2443-66f2-4b4b-89ca-2c3e66f051c8;9A;Allgemein 
+ba48cda5-3765-4ab1-855e-d502ad8f2d27;438f2443-66f2-4b4b-89ca-2c3e66f051c8;9B;Reservemittel Budget
+f0f65703-f8e3-4f3a-ab78-e4f568b4d3ce;438f2443-66f2-4b4b-89ca-2c3e66f051c8;9C;Reservemittel Steuerung
+aaa7980a-9e86-42f7-b7c2-eaddc1a2a4b8;c7609a39-abe5-487d-ba05-2adcaee25c98;0A.01;Allgemeine Maßnahmen
+5a09efab-345c-43c7-83ce-ef8f20b744f6;c7609a39-abe5-487d-ba05-2adcaee25c98;0A.02;Sonstiges zu Allgemein
+e196fa2b-2a33-4955-9ca8-0ebee9869910;a6665651-c26f-49a9-b2d9-f0627a68f1d3;0B.01;Erwerb Grund
+45b15313-c311-4315-8014-b216ee3253d1;a6665651-c26f-49a9-b2d9-f0627a68f1d3;0B.02;Erwerb Baurecht
+9339424f-b590-45d7-994d-b25b8d59f8f2;ad8b5367-74fc-416b-a4ca-c59a8913c2f3;0C.01;Vorstudien, Gutachten
+b27b17e5-9715-4ce9-b4a1-a54b7d5f2aa1;ad8b5367-74fc-416b-a4ca-c59a8913c2f3;0C.02;Wertermittlung, Untersuchung
+f5719ddc-2df3-491b-a1f1-d4902fcad7a3;ad8b5367-74fc-416b-a4ca-c59a8913c2f3;0C.03;Gebühren, Steuern
+c1d900c7-a33b-4923-81d4-332d06460dbc;b8c8d13f-04cf-4816-82b7-383238d3bf73;0D.01;Abfindungen
+0e97e536-3804-4dfa-b8b5-4dc6f9eb97d5;b8c8d13f-04cf-4816-82b7-383238d3bf73;0D.02;Ablösen von Rechten und Lasten
+89eb03ec-cde0-4e66-87a1-47845a3146a3;57a38abd-8f54-4262-b5dd-21a4bc19cc1d;1A.01;Besondere Baustelleneinrichtung
+0cd91592-f3f1-4cdb-a95b-7eedfdc57cb8;57a38abd-8f54-4262-b5dd-21a4bc19cc1d;1A.02;Allgemeine Sicherungsmaßnahmen
+89ec8fdc-4383-4950-9a45-7ecde665671a;57a38abd-8f54-4262-b5dd-21a4bc19cc1d;1A.03;Sonstiges zu Aufschließung
+4095f51a-b009-42ea-9d5c-6b503a5f58c5;8cc3323b-8bc9-4819-9416-6d8b84246aba;1B.01;Altlastenbeseitigung
+be572d5b-c9d0-41f2-bced-13b87d34ef40;8cc3323b-8bc9-4819-9416-6d8b84246aba;1B.02;Abbruchmaßnahmen
+a125b174-f47c-4ef7-91b1-67833e3e12a5;8cc3323b-8bc9-4819-9416-6d8b84246aba;1B.03;Geländeoberfläche herrichten
+f254cd3a-8915-4b95-9a3f-42781991f74c;c712e669-60fa-4fc9-a58b-2c0beb1cec85;1C.01;Entsorgungsleitungen
+fe107682-b1c3-4f10-9571-a35dad1fe582;c712e669-60fa-4fc9-a58b-2c0beb1cec85;1C.02;Versorgungsleitungen
+f2b1ffc1-048c-4a25-bbf7-164a1a447ffe;c712e669-60fa-4fc9-a58b-2c0beb1cec85;1C.03;Verkehrserschließungen
+16552964-284a-441c-9e48-06dec414b062;c712e669-60fa-4fc9-a58b-2c0beb1cec85;1C.04;Sonstige Erschließungen
+8a456b28-8e59-4a7d-a358-057b781fa789;059855f4-4953-4c36-b15b-cba906d3b8bb;1D.01;Abbruchmaßnahmen
+8f43663f-36dc-49c8-afe2-0c87ad87acd9;059855f4-4953-4c36-b15b-cba906d3b8bb;1D.02;Rückbaumaßnahmen
+dbde4f9f-e864-43ab-ab38-05c87e56b835;059855f4-4953-4c36-b15b-cba906d3b8bb;1D.03;Baustellenrecycling
+236337c1-8b18-43fc-aaaa-1fb9131a0f14;059855f4-4953-4c36-b15b-cba906d3b8bb;1D.04;Altlastenentsorgung
+fe2c43c0-b6dd-4b7e-8872-c60cf244b543;8a570735-a8b0-48d7-aadc-94e7da4e172c;1E.01;Baustellenprovisorien
+4f1cb220-10f6-4ef9-a671-a5b1b5ffca4a;8a570735-a8b0-48d7-aadc-94e7da4e172c;1E.02;Bauprovisorien
+59d6a41b-fc02-48f3-924a-9548a682a9e3;8a570735-a8b0-48d7-aadc-94e7da4e172c;1E.03;Verkehrsprovisorien
+125548be-b46f-4806-bcc3-e33c16de6ca5;e91fe2f1-ea1b-4d7f-88d7-bad92b4c9f58;2A.01;Besondere  Baustelleneinrichtung
+4eb9661e-b844-4947-88bf-3ee74d33f7aa;e91fe2f1-ea1b-4d7f-88d7-bad92b4c9f58;2A.02;Allgemeine  Sicherungsmaßnahmen
+ed530859-a2a0-48a0-8f08-ed155753a3f2;e91fe2f1-ea1b-4d7f-88d7-bad92b4c9f58;2A.03;Sonstiges zu Bauwerk-Rohbau
+4e8f30a4-2acc-4940-8ceb-956d0f9a8b39;f477b69a-06d7-4819-9039-54fab9f6d9f4;2B.01;Baugrubenherstellung
+a37f21e0-dd74-4dc3-93d0-55d40bf61e6b;f477b69a-06d7-4819-9039-54fab9f6d9f4;2B.02;Baugrubenumschließung
+7a1234ec-96a4-42fe-8a2f-d0a48b70cfee;f477b69a-06d7-4819-9039-54fab9f6d9f4;2B.03;Wasserhaltung
+d1ceb842-af40-4b92-84af-310bd6d1a8f0;4837927c-72e9-402a-9755-aa4762c9491d;2C.01;Baugrundverbesserungen
+c2b55da5-c0c0-41af-a0af-39eb23c81f48;4837927c-72e9-402a-9755-aa4762c9491d;2C.02;Tiefengründungen
+ba18c2ee-750c-4d2e-bc88-124f9a930e65;4837927c-72e9-402a-9755-aa4762c9491d;2C.03;Flachgründungen
+2e74f1c4-614e-4a34-827a-923a4abd8ce8;4837927c-72e9-402a-9755-aa4762c9491d;2C.04;Bodenkonstruktionen
+b5bf6b93-5626-4b58-83a0-7978cedff710;4837927c-72e9-402a-9755-aa4762c9491d;2C.05;Bauwerksabdichtungen
+5a75600f-2bc1-4ee1-8cbd-18b3ce98d825;b69c2487-5a03-40af-8d0e-62556ef89a00;2D.01;Deckenkonstruktionen
+ce9c111d-e676-4849-a1c7-aaa1daf4756c;b69c2487-5a03-40af-8d0e-62556ef89a00;2D.02;Treppenkonstruktionen
+7e8dc262-5912-42e2-ada9-7b8fd7ad87a9;b69c2487-5a03-40af-8d0e-62556ef89a00;2D.03;Dachkonstruktionen
+73ab1ac3-8040-4c2b-ab48-1da9efa5c046;b69c2487-5a03-40af-8d0e-62556ef89a00;2D.04;Spezielle Konstruktionen
+1c5574cf-a27e-49a7-bebb-e3c3c4d64323;a4c5c1c7-48d9-4dfa-bb21-049e63c22c2f;2E.01;Außenwandkonstruktionen
+5590e037-da2e-4ea3-b070-188bc6ca142e;a4c5c1c7-48d9-4dfa-bb21-049e63c22c2f;2E.02;Innenwandkonstruktionen
+2ec2ea00-262d-4883-863c-436cd671fa2c;a4c5c1c7-48d9-4dfa-bb21-049e63c22c2f;2E.03;Stützenkonstruktionen
+a7770c23-11df-43d9-aea5-98db8bd81fec;a4c5c1c7-48d9-4dfa-bb21-049e63c22c2f;2E.04;Spezielle Konstruktionen
+3a9817b9-4ff7-402c-8e9b-76867823986a;c67674d4-52c4-45ff-9da8-01cbbcef2aef;2F.01;Spezielle Baukonstruktionen
+8b04aff9-e288-4434-814c-02d7027de59f;bc0ba9da-48d7-4237-86b6-c15583ed6f3f;2G.01;Entsorgungsleitungen
+2f52c568-6a33-4eb2-ba46-6b8afc7aba1e;bc0ba9da-48d7-4237-86b6-c15583ed6f3f;2G.02;Versorgungsleitungen
+21dee7e9-0dc4-4512-98b8-d857a45ab501;bc0ba9da-48d7-4237-86b6-c15583ed6f3f;2G.03;Rauch- und Abgasfänge
+10eb1904-6cca-4c4e-8669-e3b9f0fde92c;23dfea2c-7159-4b9b-acc8-2d741c932069;3A.01;Besondere Baustelleneinrichtung
+7a4db3c5-8b2e-4f1e-8553-5bdecd062e91;23dfea2c-7159-4b9b-acc8-2d741c932069;3A.02;Allgemeine Sicherungsmaßnahmen
+f27c38e4-35ff-4a5c-b6b5-1f1ebf390ddf;23dfea2c-7159-4b9b-acc8-2d741c932069;3A.03;Sonstiges zu Bauwerk-Technik
+e850210a-efb9-4bbc-ae8f-a20e51ab7642;078f6306-5a63-4979-92a7-72cd476b838b;3B.01;Aufzugsanlagen
+cdfee5a2-6439-4b9e-aa7d-fd39d1b4aa27;078f6306-5a63-4979-92a7-72cd476b838b;3B.02;Fahrtreppen
+ebf2e419-d09f-4932-91ae-ef68cb7d89c0;078f6306-5a63-4979-92a7-72cd476b838b;3B.03;Befahranlagen
+b23b2daf-32e5-4748-be6e-488cfbacd821;078f6306-5a63-4979-92a7-72cd476b838b;3B.04;Transportanlagen
+3e6a492c-69a2-4a1e-9ee8-4839e458767b;078f6306-5a63-4979-92a7-72cd476b838b;3B.05;Krananlagen
+85c03d77-07b9-4f5f-ae17-5d6f7f952c09;79f76801-6cc2-4acb-b90e-a26fce29699b;3C.01;Wärmeerzeugungsanlagen
+a5c4aaef-57a9-4def-ae99-834c69f905b2;79f76801-6cc2-4acb-b90e-a26fce29699b;3C.02;Wärmeverteilnetze
+4c56558d-2f9b-4ef6-831e-63e8dea6bb79;79f76801-6cc2-4acb-b90e-a26fce29699b;3C.03;Raumheizflächen
+df37c1ee-fb5c-4acc-bac5-08d95491592e;e155aca0-4019-420c-8bdd-cab35356f8b5;3D.01;Lüftungsanlagen
+4932bf0e-dd58-4d8b-a527-ef0e14cbc241;e155aca0-4019-420c-8bdd-cab35356f8b5;3D.02;Teilklimaanlagen
+cfc38a48-48c2-4e13-aa94-99c03fe2be5a;e155aca0-4019-420c-8bdd-cab35356f8b5;3D.03;Klimaanlagen
+33e93813-d938-49d4-a16e-a6b28b41689f;e155aca0-4019-420c-8bdd-cab35356f8b5;3D.04;Kälteanlagen
+114f8281-db05-4fed-bab1-94c788c189cc;e155aca0-4019-420c-8bdd-cab35356f8b5;3D.05;Prozesslufttechnische Anlagen
+5c19a73c-21a5-4d18-bc3c-5f333d312002;79afbdb3-8809-4840-b84b-743d4f1e7c92;3E.01;Abwasseranlagen
+da161b6c-9b64-4489-9218-e4555dc675b9;79afbdb3-8809-4840-b84b-743d4f1e7c92;3E.02;Wasseranlagen
+3712ec41-ad5a-474d-a59c-ee85bfc7386c;79afbdb3-8809-4840-b84b-743d4f1e7c92;3E.03;Gasanlagen
+66927d6f-670f-43d3-87c9-46f0545f3e48;79afbdb3-8809-4840-b84b-743d4f1e7c92;3E.04;Feuerlöschanlagen
+74bc284f-b407-4ce9-8f30-98ca92350dd9;543eeb14-b544-4e2d-bee2-600df69a3517;3F.01;Hoch-/Mittelspannungsanlagen
+6be2d9d5-c703-4b1d-8dd8-48fa83b4ffe2;543eeb14-b544-4e2d-bee2-600df69a3517;3F.02;Eigenstromversorgung
+42a8d862-0c05-4d4a-9de5-7975b84873d0;543eeb14-b544-4e2d-bee2-600df69a3517;3F.03;Niederspannungsschaltanlagen
+bf09991f-d602-4a81-89c3-782cdb9120e6;543eeb14-b544-4e2d-bee2-600df69a3517;3F.04;Niederspannungsinstallation
+338041d5-d774-4708-a6fd-5d715f39e9aa;543eeb14-b544-4e2d-bee2-600df69a3517;3F.05;Beleuchtungsanlagen
+0aad2b62-7097-467a-85da-adec23d91141;543eeb14-b544-4e2d-bee2-600df69a3517;3F.06;Blitzschutzanlagen
+c87b1f37-fa85-45a8-8bc9-2f9309b561a5;368fd45a-62e4-422b-bcec-10c4046e0803;3G.01;Telekommunikationsanlagen
+aaf1bbf2-86c8-41a0-9155-32489500f877;368fd45a-62e4-422b-bcec-10c4046e0803;3G.02;Such-/Signalanlagen
+03407d43-ffd9-4e94-b551-0098f38c7069;368fd45a-62e4-422b-bcec-10c4046e0803;3G.03;Zeitdienstanlagen
+6459d5fc-362c-48e9-a696-839eeda224a0;368fd45a-62e4-422b-bcec-10c4046e0803;3G.04;Elektroakustische Anlagen
+ec7d58b3-e589-4614-aee3-334444e00cd0;368fd45a-62e4-422b-bcec-10c4046e0803;3G.05;Fernseh-/Antennenanlagen
+512adc34-64c8-42ff-b39d-40ef756f6b46;368fd45a-62e4-422b-bcec-10c4046e0803;3G.06;Gefahrenmelde-/Alarmanlagen
+44e9fd0b-68f9-4e25-a800-59b578d2a611;368fd45a-62e4-422b-bcec-10c4046e0803;3G.07;Übertragungsnetze
+8ee745fd-eb1a-4e22-bde7-412e23dc7a2a;e824d098-aa70-4c92-8119-5ebcef52e33b;3H.01;Mess-, Steuer-, Regel- und Leitanlagen
+5b349ab2-4872-43be-bd71-bfcf4ae7cf5b;726746ba-b2d4-4190-b1cd-1148c43826d9;3I.01;Maschinenanlagen
+a45f30ae-d299-40e6-bdb7-31432bb4d113;726746ba-b2d4-4190-b1cd-1148c43826d9;3I.02;Mechatronische Anlagen
+c1ad667f-13b6-4cad-951e-1a1e64fe38bd;a9934f5b-23a6-4604-ac89-4d1c622d36b8;4A.01;Besondere Baustelleneinrichtung
+bc92fc9a-438b-4524-954f-ac2951d7b7f3;a9934f5b-23a6-4604-ac89-4d1c622d36b8;4A.02;Allgemeine Sicherungsmaßnahmen
+432ff430-8af5-454c-abeb-ac8db0f8ebb7;a9934f5b-23a6-4604-ac89-4d1c622d36b8;4A.03;Sonstiges zu Bauwerk-Ausbau
+a9d758c9-703b-4f7b-ac1f-2eb287d70954;bf219a80-9f2d-459b-ba59-0e1325ff54c1;4B.01;Dachbeläge
+899df49f-72ac-4be9-8e8d-bce4e6abaf5c;bf219a80-9f2d-459b-ba59-0e1325ff54c1;4B.02;Dachfenster/-öffnungen
+de88ee48-15f2-4c2b-b3b1-94087b61457c;bf219a80-9f2d-459b-ba59-0e1325ff54c1;4B.03;Balkon-/Terrassenbeläge
+34d10304-8aba-4e30-b2c2-3470bcc65723;bf219a80-9f2d-459b-ba59-0e1325ff54c1;4B.04;Feste Einbauteile
+93d01afb-c45b-4bf4-848b-02b549c1b98f;10bbc645-8a1b-44dc-a178-b8737059457a;4C.01;Fassadenverkleidungen
+8e761032-856a-4c53-b0e5-bb0992a0e85d;10bbc645-8a1b-44dc-a178-b8737059457a;4C.02;Fassadenöffnungen
+78c71a84-63d3-47ee-860c-2291972bd88d;10bbc645-8a1b-44dc-a178-b8737059457a;4C.03;Sonnenschutz
+e78c379e-fd79-45dc-ac61-6fd22b22e641;10bbc645-8a1b-44dc-a178-b8737059457a;4C.04;Feste Einbauteile
+3e56328f-793e-4cf7-abd1-947817df1c41;10bbc645-8a1b-44dc-a178-b8737059457a;4C.05;Außenhülle erdberührt
+c91abd25-ca3b-47ae-a19d-f03bfa1936a4;d28ae8d1-f8c1-464e-893b-8d5d8e1b9c53;4D.01;Bodenbeläge
+0659fe6c-01fa-4ef8-8973-233c74096a6f;d28ae8d1-f8c1-464e-893b-8d5d8e1b9c53;4D.02;Wandverkleidungen
+7dce1a37-f3c3-460d-a4f0-dd942d24c94b;d28ae8d1-f8c1-464e-893b-8d5d8e1b9c53;4D.03;Deckenverkleidungen
+dc5e420b-0b45-4ac1-a260-292ba1e34fc0;d28ae8d1-f8c1-464e-893b-8d5d8e1b9c53;4D.04;Innentüren, Innenfenster
+bbaa66c6-30e4-429e-ae64-43d11a8b54fe;d28ae8d1-f8c1-464e-893b-8d5d8e1b9c53;4D.05;Innenwandelemente
+971e05d2-efcd-4c6b-ad05-6e9ac4e2fe56;d28ae8d1-f8c1-464e-893b-8d5d8e1b9c53;4D.06;Feste Einbauteile
+79ff1a79-f327-451b-b81c-d83ca7c9b924;d28ae8d1-f8c1-464e-893b-8d5d8e1b9c53;4D.07;Spezielle Innenausbauteile
+b0cd9fb7-5c31-4912-9410-1d01c3f42aba;a04342a5-5955-41f6-9b09-3ad804495452;5A.01;Besondere Baustelleneinrichtung
+d92afd0e-ef9f-4931-8a5c-6a9ea16ccf5c;a04342a5-5955-41f6-9b09-3ad804495452;5A.02;Allgemeine Sicherungsmaßnahmen
+9940538e-6222-42cb-b367-8b5abad75a78;a04342a5-5955-41f6-9b09-3ad804495452;5A.03;Sonstiges zu Einrichtung
+0f3f1bc4-25b4-43c0-94d0-c3b7bd49127f;7030e3eb-a804-40c6-8427-15d910df884d;5B.01;Küchentechnische Anlagen
+b08c6fc3-7b28-4ce2-98c6-fe2d4e7587c2;7030e3eb-a804-40c6-8427-15d910df884d;5B.02;Wäscherei-/Reinigungsanlagen
+ff715bd2-520a-4a2c-a507-6124f4165ee8;7030e3eb-a804-40c6-8427-15d910df884d;5B.03;Medienversorgungsanlagen
+a17dca89-1653-4503-8e75-d66cea832086;7030e3eb-a804-40c6-8427-15d910df884d;5B.04;Medizintechnische Anlagen
+964f7c99-fd19-4ccf-ab11-dc59833d25f8;7030e3eb-a804-40c6-8427-15d910df884d;5B.05;Labortechnische Anlagen
+cbb5723c-1fc1-456d-a004-57ac48871478;7030e3eb-a804-40c6-8427-15d910df884d;5B.06;Badetechnische Anlagen
+46ef4e96-46e4-4e45-bf58-8b0dfcb870fe;7030e3eb-a804-40c6-8427-15d910df884d;5B.07;Kälteanlagen
+b87a2d8d-4996-4226-a952-7ef7616a22fa;7030e3eb-a804-40c6-8427-15d910df884d;5B.08;Entsorgungsanlagen
+1ed8c398-e111-48c5-b3f9-68af0abe630e;7030e3eb-a804-40c6-8427-15d910df884d;5B.09;Automationssysteme
+b4c249ff-4856-4dc2-98e8-ce7b7f495179;7030e3eb-a804-40c6-8427-15d910df884d;5B.10;Zentrale Einrichtungen
+1143d921-f12c-4118-8a13-017b658928d0;7030e3eb-a804-40c6-8427-15d910df884d;5B.11;Allgemeine betriebliche Einrichtungen
+a82322fe-bf35-45e3-bb16-c44644dcf57c;7030e3eb-a804-40c6-8427-15d910df884d;5B.12;Besondere betriebliche Einrichtungen
+0cd8bcfd-394a-4f7d-b7c2-d6c2ae28970d;54378b18-a7e9-41cd-9444-c11db596dc96;5C.01;Allgemeine Ausstattungen
+1eff23f7-ff93-4452-a234-177a14284eef;54378b18-a7e9-41cd-9444-c11db596dc96;5C.02;Besondere Ausstattungen
+235e38ce-b7b4-443b-b696-eb2c7e900c1a;54378b18-a7e9-41cd-9444-c11db596dc96;5C.03;Leitsysteme
+997581b2-f84e-4dcc-8441-b5da8ed160f4;54378b18-a7e9-41cd-9444-c11db596dc96;5C.04;Kunstobjekte
+2bed978d-f7ff-4de6-8746-fb8610fcee0b;5e8d6621-0447-4445-a899-5b288a0ae431;6A.01;Besondere Baustelleneinrichtung
+ede4de75-9982-432b-8fca-ae1c6183d81f;5e8d6621-0447-4445-a899-5b288a0ae431;6A.02;Allgemeine Sicherungsmaßnahmen
+0888a39c-3a8a-4938-a24c-968e8ed559ab;5e8d6621-0447-4445-a899-5b288a0ae431;6A.03;Sonstiges zu Außenanlagen
+9a312aed-9ab9-4d6c-a058-87e4f6efdfee;72c852ed-7a98-49b6-95b3-659a1232fbe0;6B.01;Geländegestaltung
+7fa71e42-2a14-4655-9312-b63b86a5df6d;72c852ed-7a98-49b6-95b3-659a1232fbe0;6B.02;Oberbodenbearbeitung
+4c842819-692d-4180-a707-b88748515d22;72c852ed-7a98-49b6-95b3-659a1232fbe0;6B.03;Sicherungsbauweisen
+693ac9b1-2dab-4ed7-a3c2-45c097fad87c;72c852ed-7a98-49b6-95b3-659a1232fbe0;6B.04;Pflanzen
+cbf0cfd6-0516-4979-b40d-36466e645983;72c852ed-7a98-49b6-95b3-659a1232fbe0;6B.05;Begrünung Gelände
+831f8efa-4829-4f5b-b862-9c05fb5d6140;72c852ed-7a98-49b6-95b3-659a1232fbe0;6B.06;Begrünung Bauteile
+b7fdb969-d50f-427d-bf0a-65a5d96906b0;72c852ed-7a98-49b6-95b3-659a1232fbe0;6B.07;Wasserflächen
+bed40135-6d61-45c8-abed-077dffe25ed5;1da11fda-dcf8-48de-8ce5-06e9718c4c86;6C.01;Gehwege
+62bd4ea4-70c3-4b04-be20-4901abe08d46;1da11fda-dcf8-48de-8ce5-06e9718c4c86;6C.02;Fahrwege
+f52983e7-1d0b-4065-ade9-fe18d4335403;1da11fda-dcf8-48de-8ce5-06e9718c4c86;6C.03;Plätze, Stellplätze, Höfe
+e25b55c6-3079-448a-89f1-8f0466be1b6c;1da11fda-dcf8-48de-8ce5-06e9718c4c86;6C.04;Sport-/Spielplatzflächen
+ffb14280-5b73-4978-b5cd-52eb4dfe6639;8f0509e5-1af5-4ac5-ad5d-8b9928220742;6D.01;Einfriedungen
+bc876175-087f-4f23-a151-ddf720d3a719;8f0509e5-1af5-4ac5-ad5d-8b9928220742;6D.02;Ausstattungen
+906e6634-8c16-485c-8f63-010bc428426a;8d9a45c9-028f-4b1e-8125-d8341cc2a771;7A.01;Sonstiges zu Planungsleistungen
+72fc5c30-473b-4117-b8b0-f257cef0fb96;b2ecdb11-cac2-4302-a5b2-8d31c3c82922;7B.01;Projektleitung Bauherr
+2dc66eb3-8b47-46f0-962e-02d68d2ceeb2;b2ecdb11-cac2-4302-a5b2-8d31c3c82922;7B.02;Sonstige Bauherrenleistungen
+71cf8fd0-e964-4b97-a710-1f8485403cf9;392e3e71-9216-4aa6-889f-16b5b437c1a6;7C.01;Projektleitung Planung
+e69e39bc-2ca6-435c-bfec-278737bfb056;392e3e71-9216-4aa6-889f-16b5b437c1a6;7C.02;Planungsleistungen
+b7c3f70b-6b63-4dad-a5ed-3479ec16a042;392e3e71-9216-4aa6-889f-16b5b437c1a6;7C.03;Sonstige Planungsleistungen
+ec7526ea-223c-4d31-b44b-44ff81a5e414;e7103f89-0830-43b0-950f-73c185f4b6a8;8A.01;Sonstiges zu Nebenleistungen
+a090deba-965c-45df-b37f-87836ae97e6e;112c0a5f-4b0d-4b11-bfc1-42fc3b91c240;8B.01;Bewilligungen, Abnahmen
+dcbb794d-9116-4907-b3df-1df5bf5ce8f9;112c0a5f-4b0d-4b11-bfc1-42fc3b91c240;8B.02;Anschlussgebühren
+3a46dec4-8b3a-4cf1-a0c4-81d66018b8f6;112c0a5f-4b0d-4b11-bfc1-42fc3b91c240;8B.03;Versicherung, Bewirtschaftung
+ced7f38c-2047-4a02-a4a3-b2a784c1add5;112c0a5f-4b0d-4b11-bfc1-42fc3b91c240;8B.04;Schlechtwettermaßnahmen
+e4a0712a-58e7-496d-bcf7-84a451f4a0ff;112c0a5f-4b0d-4b11-bfc1-42fc3b91c240;8B.05;Bodenproben, Untersuchungen
+7e3954ab-332d-4857-bbc8-b028585afe1f;112c0a5f-4b0d-4b11-bfc1-42fc3b91c240;8B.06;Sicherheit am Bau
+762e9087-7946-4641-b000-fd6da50f9692;112c0a5f-4b0d-4b11-bfc1-42fc3b91c240;8B.07;Finanzierung während Bauzeit
+e12efaa8-df7f-4023-9b02-8732a3b08d00;112c0a5f-4b0d-4b11-bfc1-42fc3b91c240;8B.08;Sonstige Baunebenleistungen
+582a5934-ee37-4093-aca9-68ef72827334;8fc80153-98bd-493e-85fd-d5743b60f8fc;8C.01;Vervielfältigungen
+97b8a11b-2658-4318-a802-35f40e5290bc;8fc80153-98bd-493e-85fd-d5743b60f8fc;8C.02;Bemusterungen
+3d9a28b9-f738-4a7f-a2c3-0477552e8f9f;8fc80153-98bd-493e-85fd-d5743b60f8fc;8C.03;Sonstige Planungsnebenleistungen
+4370b40c-2d92-48fd-b8ea-a450cdb24453;00a4da64-b8c5-45fb-937b-7133cdbc939c;9A.01;Sonstiges zu Reserven
+003cdec6-81f7-4f77-816f-3e7f8d663f30;ba48cda5-3765-4ab1-855e-d502ad8f2d27;9B.01;Reserven Unvorhergesehenes
+75dbb491-fd4d-4454-822f-389339a0858c;ba48cda5-3765-4ab1-855e-d502ad8f2d27;9B.02;Reserven Preisanpassungen
+c392edaf-21f4-4659-8953-4ae66e2a5412;ba48cda5-3765-4ab1-855e-d502ad8f2d27;9B.03;Reserven Bauherrenentscheid
+531eb6f8-0f53-493d-a583-c954768a3d35;f0f65703-f8e3-4f3a-ab78-e4f568b4d3ce;9C.01;Reserven Marktschwankungen
+c43c0f95-3fe1-4140-ab14-bc4ef2dc5cb5;f0f65703-f8e3-4f3a-ab78-e4f568b4d3ce;9C.02;Reserven Qualitäts-/Quantitätsan- passungen

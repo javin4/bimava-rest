@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        $this->call(gl\BglSeeder::class);
+
         $this->call(seeds\ProjectSeeder::class);
         $this->call(seeds\LVSeeder::class);
         $this->call(seeds\PPhaseSeeder::class);

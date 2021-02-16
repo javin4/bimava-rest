@@ -11,6 +11,8 @@ use App\Events\PComponentUpdatedEvent;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Transformers\PComponentTransformer;
 use App\Models\Element\PElementTyp;
+use App\Models\gl\Bgl;
+use PhpParser\ErrorHandler\Collecting;
 
 class PComponentController extends Controller
 {
@@ -41,6 +43,13 @@ class PComponentController extends Controller
     public function create()
     {
         //
+    }
+
+
+    public function attachBgl(PComponent $PComponent, Bgl $Bgl) {
+        $PComponent->Bgl()->associate($Bgl);
+        $PComponent->save();
+        return response()->json($PComponent, 200);
     }
 
     /**
@@ -114,7 +123,7 @@ class PComponentController extends Controller
             'ehp_result' => 'sometimes|numeric', 
             'ehp_override' => 'sometimes|numeric', 
             'ehp_override_flag' => 'sometimes|boolean',
-            //'ehp_computed' => 'sometimes|numeric',  
+            'bgl_id' => 'sometimes|string',  
         ]);  
 
         if ($validator->fails()) {  
@@ -126,7 +135,9 @@ class PComponentController extends Controller
             $updated = PComponentTransformer::toInstance($validator->validate(), $PComponent);  
             $updated->save();  
             DB::commit();  
-
+//            $PComponent->Bgl()->associate($Bgl);
+//            $PComponent->save();
+            return response()->json($PComponent, 200);
 
         } catch (Exception $ex) {  
             Log::info($ex->getMessage());  

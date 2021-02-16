@@ -39,7 +39,7 @@ class CreatePElementTypsTable extends Migration
             $table->string('kennung',15); // Kennung
             $table->text('description',15)->nullable(); // Kennung
             //Gliederungen und Classifizierungen
-            $table->string('Baugliederung',15)->nullable();
+           
             $table->string('Leistungsgliederung',15)->nullable();
             $table->string('Gewerk',15)->nullable();
             $table->string('freeClass',15)->nullable();
@@ -48,6 +48,13 @@ class CreatePElementTypsTable extends Migration
             $table->decimal('ehp_override',13, 4)->nullable();
             $table->boolean('ehp_override_flag')->default(false);
             $table->decimal('ehp_computed',13, 4)->nullable();
+        });
+        Schema::table('p_components', function (Blueprint $table) {
+            $table->uuid('bgl_id')->nullable();
+            $table->foreign('bgl_id')
+            ->references('id')->on('bgls')
+            ->onDelete('set null');
+            
         });
 
         Schema::table('p_elements', function (Blueprint $table) {

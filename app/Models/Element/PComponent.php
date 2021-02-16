@@ -2,6 +2,7 @@
 
 namespace App\Models\Element;
 
+use App\Models\gl\Bgl;
 use App\Traits\Uuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -17,6 +18,10 @@ class PComponent extends Model
     ];
 
     protected $hidden = ['pivot'];
+
+    public function Bgl(){
+        return $this->belongsTo(Bgl::class,'bgl_id');
+    }
 
     //Many to Many
     public function PElementTyps(){
