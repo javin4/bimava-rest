@@ -4,7 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LVController;
 use App\Http\Controllers\BglController;
+use App\Http\Controllers\On_UlgController;
 use App\Http\Controllers\PPhaseController;
+use App\Http\Controllers\On\OnlbController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PElementController;
 use App\Http\Controllers\PComponentController;
@@ -67,3 +69,9 @@ Route::get          ('/PComponent/{PComponent}/PElementtyps', [PComponentControl
 //bgl
 Route::get          ('/bgls', [BglController::class, 'index']);
 Route::get          ('/bglsH', [BglController::class, 'indexH']);
+
+//onlb zum testen
+Route::get          ('/onlb', [OnlbController::class, 'index']);
+Route::post          ('/onlb', [OnlbController::class, 'store']);
+
+Route::get          ('/onulgs', [On_UlgController::class, 'index']);

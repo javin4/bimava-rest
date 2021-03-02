@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Element\PElementTypSeeder::class);
         $this->call(Element\PComponentSeeder::class);
         $this->call(Element\PElementSeeder::class);
+
+        $this->call(ON\OnlbSeeder::class);
     }
 }
