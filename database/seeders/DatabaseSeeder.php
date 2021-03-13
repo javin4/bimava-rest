@@ -24,5 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call(Element\PElementSeeder::class);
 
         $this->call(ON\OnlbSeeder::class);
+        
+        $this->call(ON\ONPositionSeeder::class);
+        
     }
 }

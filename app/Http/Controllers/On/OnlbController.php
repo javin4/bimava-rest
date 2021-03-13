@@ -28,7 +28,7 @@ class OnlbController extends Controller
             }
         ])
             ->select('bezeichnung','lbkennung','versionsnummer','id')
-            //->select('*')
+                //->select('*')
             ->get();
         
         return response()->json($onlbs, 200);
@@ -51,7 +51,7 @@ class OnlbController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        $path = storage_path() . "\LB-HB021-A2063-2015_mod.onlb";       
+        $path = storage_path() . "\ONLB\LB-HB021-A2063-2015_mod.onlb";       
         $onlbImporter = new OnlbImporter($path);   
         $onlb = $onlbImporter->import();
         return response()->json($onlb, 200);
@@ -101,4 +101,5 @@ class OnlbController extends Controller
     {
         //
     }
+    
 }

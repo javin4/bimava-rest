@@ -10,10 +10,10 @@ class Onlb extends Model
 {
     use HasFactory, Uuids;
 
-    protected $guarded =[];
+    protected $guarded = [];
     protected $hidden  = ['created_at', 'updated_at'];
 
-    public function onlg(){
-        return $this->hasMany(Onlg::class,'onlb_id');
+    public function positions(){
+        return $this->hasMany(ON_Position::class,'onlb_id');
     }
 }

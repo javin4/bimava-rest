@@ -11,6 +11,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PElementController;
 use App\Http\Controllers\PComponentController;
 use App\Http\Controllers\PElementTypController;
+use App\Http\Controllers\ON\ONPositionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,4 +75,12 @@ Route::get          ('/bglsH', [BglController::class, 'indexH']);
 Route::get          ('/onlb', [OnlbController::class, 'index']);
 Route::post          ('/onlb', [OnlbController::class, 'store']);
 
-Route::get          ('/onulgs', [On_UlgController::class, 'index']);
+
+// ONLB Import der Postionen
+Route::get          ('/onpos', [ONPositionController::class, 'index']);
+Route::get          ('/onpos/{ON_Position}', [ONPositionController::class, 'show']);
+Route::put          ('/onpos', [ONPositionController::class, 'import']);
+Route::delete       ('/onpos', [ONPositionController::class, 'truncate']);
+
+
+

@@ -19,15 +19,16 @@ class OnlbImporter{
     }
 
     public function import(){
-        $this->metadaten = $this->readMetadaten($this->path);
-        $this->kenndaten = $this->readLbkenndaten($this->path);
+        $this->metadaten = $this->readXMLGroup($this->path,'metadaten');
+        $this->kenndaten = $this->readXMLGroup($this->path,'lbkenndaten');
         $this->onlb = Onlb::firstOrNew($this->metadaten,$this->kenndaten, [  	]);
-        $svb = $this->readSvb($this->path);
+        $svb = $this->readXMLGroup($this->path,'svb');
+        
         $this->onlb->svb_vorbemerkung = $svb['vorbemerkung'];
         $this->onlb->svb_kommentar = $svb['kommentar'];
         $this->onlb->save();
         
-        $this->readLG($this->path);
+        //$this->readLG($this->path);
         return  $this->onlb;
 
 
@@ -35,12 +36,12 @@ class OnlbImporter{
         //return $test;
     }
 
-    
-    function readMetadaten($path){
+
+    function readXMLGroup($path,$elementName){
         $xml = new XMLReader();
         $xml->open($path, NULL, LIBXML_PARSEHUGE);
         while ($xml->read()) {
-          if ($xml->nodeType === \XmlReader::ELEMENT && $xml->name==="metadaten") {
+          if ($xml->nodeType === \XmlReader::ELEMENT && $xml->name===$elementName) {
             $metadatenXML = new SimpleXMLElement($xml->readOuterXML());
             foreach ($metadatenXML->children() as $meta){
                 $data[$meta->getName()] = $this->ONdataFormater($meta);
@@ -48,20 +49,6 @@ class OnlbImporter{
           }
         }
         $xml->close();
-        return  $data;
-    }
-  
-    function readLbkenndaten($path){
-        $xml = new XMLReader();
-        $xml->open($path, NULL, LIBXML_PARSEHUGE);
-        while ($xml->read()) {
-            if ($xml->nodeType === \XmlReader::ELEMENT && $xml->name==="lbkenndaten") {
-            $bkenndaten = new SimpleXMLElement($xml->readOuterXML());
-            foreach ($bkenndaten->children() as $meta){
-                $data[$meta->getName()] = $this->ONdataFormater($meta);
-            }
-            }
-        }
         return  $data;
     }
 
@@ -91,20 +78,6 @@ class OnlbImporter{
             break;
         }
         return $data;
-    }
-
-    function readSvb($path){
-        $xml = new XMLReader();
-        $xml->open($path, NULL, LIBXML_PARSEHUGE);
-        while ($xml->read()) {
-            if ($xml->nodeType === \XmlReader::ELEMENT && $xml->name==="svb") {
-            $simpleXml = new SimpleXMLElement($xml->readOuterXML());
-            foreach ($simpleXml->children() as $node){
-                $data[$node->getName()] = $this->ONdataFormater($node);
-            }
-            }
-        }
-        return  $data;
     }
 
     function innerNodeToString($node){
@@ -139,7 +112,6 @@ class OnlbImporter{
         }
         return $commentData;
     }
-
 
     function readLG($path){
         $xml = new XMLReader();
