@@ -2,8 +2,10 @@
 
 namespace App\Models\ON;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\data\Param;
+use App\Models\data\ParamValue;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ON_Position extends Model{
     use HasFactory;
@@ -32,5 +34,10 @@ class ON_Position extends Model{
         //->select('id','kennung','name','parent_id')
         ->orderBy('id')
         ->with('children');
+    }
+
+    //
+    public function paramvalue(){
+        return $this->belongsToMany(ParamValue::class, 'on_position_paramsvalue','on_position_id','paramsvalue_id');
     }
 }

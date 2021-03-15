@@ -10,6 +10,7 @@ use App\Http\Controllers\On\OnlbController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PElementController;
 use App\Http\Controllers\PComponentController;
+use App\Http\Controllers\data\ParamController;
 use App\Http\Controllers\PElementTypController;
 use App\Http\Controllers\ON\ONPositionController;
 
@@ -81,6 +82,12 @@ Route::get          ('/onpos', [ONPositionController::class, 'index']);
 Route::get          ('/onpos/{ON_Position}', [ONPositionController::class, 'show']);
 Route::put          ('/onpos', [ONPositionController::class, 'import']);
 Route::delete       ('/onpos', [ONPositionController::class, 'truncate']);
+Route::post          ('/onposattachparams', [ONPositionController::class, 'attachParam']);
 
 
+
+// params
+Route::get          ('/params', [ParamController::class, 'index']);
+Route::get          ('/param{Param}', [ParamController::class, 'show']);
+Route::post          ('/param', [ParamController::class, 'store']);
 
